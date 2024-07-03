@@ -5,24 +5,16 @@ title: "DaVinCI"
 ## Dynamic Visualization for Clinical Insights
 
 ### What is DaVinCI?
-<!-- ::: columns -->
-<!-- ::: {.column width="20%"} -->
 
-<!-- <!-- ![](quarto/images/davinci_hex.png){width="150"} -->
-<!-- ::: -->
-
-<!-- ::: {.column width="80%"} -->
 
 DaVinCI offers R/Shiny based tools to review, aggregate and visualize data arising from clinical trials, supporting the goal of developing and delivering safe and effective treatments for patients. However, instead of creating entire R/Shiny applications, DaVinCI provides individual modules. Modules are functional building blocks that can be linked together into customized apps. This customization enables App Creators to build their own app according to trial-specific needs without deep R knowledge. 
 
-<!-- ::: -->
-<!-- ::: -->
 
 ### Our commitment and contribution to open-source
  
 DaVinCI software development including the codebase  will be made fully open-source, which will allow you to use or co-develop DaVinCI.  
 Our initial open-source release is planned by **Q3-2024!**  
-Don't miss our release and other DaVinCI related news, and join the [DaVinCI LinkedIn group](https://www.linkedin.com/groups/13052407/){target="_blank"} today!
+Don't miss our release and other DaVinCI related news, and connect with our Product Owner [Stefan Doering](https://www.linkedin.com/in/stefan-d%C3%B6ring-6134a595/){target="_blank"} on LinkedIn!
 
 
 
