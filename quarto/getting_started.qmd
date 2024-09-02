@@ -1,0 +1,112 @@
+---
+title: "Getting Started"
+execute:
+  echo: false
+---
+
+## How to get started with DaVinCI?
+
+### Environment Setup and Package Installation
+
+#### Environment Setup
+
+Please ensure that R version 4.0.0 or higher is installed on your computer. This is required to install the `davinci` package and its dependencies. You can check your current version of R by running `sessionInfo()` within the R console.
+
+#### Installing the {davinci} package
+
+To install the {davinci} package, run the following lines of code:
+``` {r}
+#| echo: true
+#| eval: false
+if (!require("remotes")) install.packages("remotes")
+remotes::install_github("Boehringer-Ingelheim/davinci", upgrade = TRUE)
+```
+
+
+### How to set up your first App
+
+The app creation process can be split into 4 steps.  
+1. Loading the data  
+2. Preparing the data  
+3. Setting up the modules  
+4. Launching the app  
+  
+
+#### Loading the data
+
+First of all we need some data for the app. 
+You can use the functionalities of [{dv.loader}](https://boehringer-ingelheim.github.io/dv.loader/){target="_blank"} to load data from a filesystem. 
+
+``` {r}
+#| echo: true
+#| eval: false
+
+library("davinci")
+
+data_list <- load_data(
+  sub_dir = ,
+  file_names = c("dm", "ae")
+)
+
+```
+
+#### Preparing the data
+
+In order to be able to use the data together with the DaVinCI modules some pre-processing is needed.
+The modules themselves do data provisioning and derivations as little as possible. this assure that the modules ar as flexibel as possible and work with almost all data sources like SDTM or Adam.
+
+``` {r}
+#| echo: true
+#| eval: false
+
+library("dv.loader")
+
+# Convert data to appropriate types
+data_list[["dm"]] <- convert_data(data_list[["dm"]])
+data_list[["ae"]] <- convert_data(data_list[["ae"]])
+
+# Assign meaningful labels to data domain names
+attributes(data_list$dm)$label <- "Subject Level"
+attributes(data_list$ae)$label <- "Adverse Events"
+
+```
+
+#### Setting up the modules
+
+
+``` {r}
+#| echo: true
+#| eval: false
+
+library("dv.listings")
+
+# Specify default variables
+default_vars <- list(
+  dm = c("STUDYID", "USUBJID", "SITEID", "ARM"),
+  ae = c("STUDYID", "ASTDY", "AENDT", "AESER")
+)
+
+# 3. Module list
+module_list <- list(
+  "Exemplary Listings" = mod_listings(
+    module_id = "mod1",
+    dataset_names = c("dm", "ae"),
+    default_vars = default_vars
+  )
+)
+
+```
+
+#### Launching the app
+In this step you combine everything and launch the app.  
+You can found more information on `run_app()` [here](https://boehringer-ingelheim.github.io/dv.manager/reference/run_app.html){target="_blank"}
+``` {r}
+#| echo: true
+#| eval: false
+library(dv.manager)
+run_app(
+  data = list("MyData" = data_list),
+  module_list = module_list,
+  filter_data = "dm"
+)
+```
