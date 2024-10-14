@@ -1,16 +1,16 @@
 ---
-title: "DaVinCI"
+title: "DaVinci"
 ---
 
-## Dynamic Visualization for Clinical Insights (DaVinCI)
+## Dynamic Visualization for Clinical Insights (DaVinci)
 
-### What is DaVinCI?
+### What is DaVinci?
 
-DaVinCI provides tools to review, aggregate and visualize data to develop and deliver safe and effective treatments for patients. Instead of creating entire R/Shiny applications, DaVinCI provides individual modules. Modules are functional building blocks that can be linked together into customized apps. This customization enables App Creators to build their own app according to trial-specific needs without deep R knowledge. The concept of developing loosely coupled, functional units and composing them into a larger application is subsequently referred to as modular approach.
+DaVinci provides tools to review, aggregate and visualize data to develop and deliver safe and effective treatments for patients. Instead of creating entire R/Shiny applications, DaVinci provides individual modules. Modules are functional building blocks that can be linked together into customized apps. This customization enables App Creators to build their own app according to trial-specific needs without deep R knowledge. The concept of developing loosely coupled, functional units and composing them into a larger application is subsequently referred to as modular approach.
 
 ### The modular approach
 
-To create an app you need to identify which modules to include in the first place. Think of each DaVinCI module as individual building stone that you can put together to build a vehicle for a certain purpose. If you want to go fast, build a motorcycle, if you want to go far build a common car. The vehicle refers to the DaVinCI app that you create according to your use case.
+To create an app you need to identify which modules to include in the first place. Think of each DaVinci module as individual building stone that you can put together to build a vehicle for a certain purpose. If you want to go fast, build a motorcycle, if you want to go far build a common car. The vehicle refers to the DaVinci app that you create according to your use case.
 
 ![](quarto/images/building_blocks.png){fig-align="center"}
 
@@ -19,12 +19,18 @@ For that purpose, modules are provided as R packages. One package contains one o
 For more details about how to actually create an app, refer to [Getting Started](quarto/getting_started.qmd). An overview of all modules can be found [here](quarto/modules.qmd). 
 
 
-### The DaVinCI framework consists of the following packages:  
+### The DaVinci framework consists of the following packages:  
 
 
-| package | description |
-|---------|-------------|
-|[dv.loader](https://boehringer-ingelheim.github.io/dv.loader/){target="_blank"}|Data Loading package for DaVinCI|
-|[dv.filter](https://boehringer-ingelheim.github.io/dv.filter/){target="_blank"}|Dynamic Data Filtering package|
-|[dv.manager](https://boehringer-ingelheim.github.io/dv.manager/){target="_blank"}|{dv.manager} package is designed to make it quick and easy to create and deploy Shiny applications using the modules from DaVinCI.|
-|[dv.listings](https://boehringer-ingelheim.github.io/dv.listings/){target="_blank"}|Listings module displays arbitrary datasets as listings.|
+|   package       | description |
+|-----------------|-------------|
+|[{dv.bookman}](https://boehringer-ingelheim.github.io/dv.bookman/){target="_blank"}| Bookmarking manager module |
+|[{dv.clinlines}](https://boehringer-ingelheim.github.io/dv.clinlines/){target="_blank"}| clinical timelines module|
+|[{dv.edish}](https://boehringer-ingelheim.github.io/dv.edish/){target="_blank"}| eDISH module |
+|[{dv.explorer.parameter}](https://boehringer-ingelheim.github.io/dv.explorer.parameter/){target="_blank"}| Parameter exploration modules |
+|[{dv.filter}](https://boehringer-ingelheim.github.io/dv.filter/){target="_blank"}| Dynamic data filtering package |
+|[{dv.listings}](https://boehringer-ingelheim.github.io/dv.listings/){target="_blank"}| Listings module displays arbitrary datasets as listings. |
+|[{dv.loader}](https://boehringer-ingelheim.github.io/dv.loader/){target="_blank"}| Data loading package for DaVinci |
+|[{dv.manager}](https://boehringer-ingelheim.github.io/dv.manager/){target="_blank"}| {dv.manager} package is designed to make it quick and easy to create and deploy Shiny applications using the modules from DaVinci. |
+|[{dv.papo}](https://boehringer-ingelheim.github.io/dv.papo/){target="_blank"}| Patient profile module |
+: {tbl-colwidths="[25,75]"}

@@ -10,14 +10,14 @@ website:
     left:
       - quarto/getting_started.qmd
       - quarto/modules.qmd
-      - about.qmd
+      #- about.qmd
     right:
       - icon: github
         menu:
           - text: Source Code
-            url: https://github.com/Boehringer-Ingelheim/davinci
+            url: https://github.com/orgs/Boehringer-Ingelheim/teams/davinci/repositories
           - text: Report a Bug
-            url: https://github.com/Boehringer-Ingelheim/davinci/issues
+            url: https://github.com/Boehringer-Ingelheim/davinci/issues/new?assignees=&labels=bug&projects=&template=bug_report.md&title=
   page-footer:
     center:
       - text: "This website as well as the DaVinci packages are licensed under the Apache License, Version 2.0." # nolint

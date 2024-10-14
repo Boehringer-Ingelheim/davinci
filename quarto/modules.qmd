@@ -1,43 +1,253 @@
 ---
-title: "DaVinCI Modules"
+title: "DaVinci Modules"
 execute:
   echo: false
 format:
   html:
     toc: true
-lightbox:
-  match: auto
+#lightbox:
+ # match: auto
 ---
 
 
-## General packages:
+## General packages
 
 ### Data loader by [{dv.loader}](https://boehringer-ingelheim.github.io/dv.loader/){target="_blank"}
 The data loader supports the loading of data from a file system.
 
 ### Global filter by [{dv.filter}](https://boehringer-ingelheim.github.io/dv.filter/){target="_blank"}
-The global filter provides variable filters that can be activated and deactivated at run time by the user. It is presented at the sidebar of each DaVinCI App, thus it is incorporated into the module manager. When effective, only subjects who meet the filter criteria are displayed throughout all modules.
+The global filter provides variable filters that can be activated and deactivated at run time by the user. It is presented at the sidebar of each DaVinci App, thus it is incorporated into the module manager. When effective, only subjects who meet the filter criteria are displayed throughout all modules.
 
 ### Module Manager by [{dv.manager}](https://boehringer-ingelheim.github.io/dv.manager/){target="_blank"}
-The module manager is the heart of each DaVinCI app and provides all requested outputs (also called modules), as well as meta information around the data. It takes care of jumping between modules, switching between data from different trials, and displaying a custom start-up message.
+The module manager is the heart of each DaVinci app and provides all requested outputs (also called modules), as well as meta information around the data. It takes care of jumping between modules, switching between data from different trials, and displaying a custom start-up message.
 
 
 
-## Modules:
-### Listings by [{dv.listings}](https://boehringer-ingelheim.github.io/dv.listings/){target="_blank"} 
+## Modules
+### Bookmark manager by [{dv.bookman}](https://boehringer-ingelheim.github.io/dv.bookman/){target="_blank"} 
   
 ::: columns
 ::: {.column width="40%"}
 
 ```{r}
 #| warning: false
-#| fig-cap: Listings module
+#| lightbox:
+#|   group: bookman
+source("carousel/carousel.R")
+images <- list(
+  list(
+    image = "images/modules/bookmark_manager/1.png",
+    link = "images/modules/bookmark_manager/1.png"
+  ),
+  list(
+    image = "images/modules/bookmark_manager/2.png",
+    link = "images/modules/bookmark_manager/2.png"
+  )
+)
+carousel("bookman-gallery", 5000, images)
+```
+
+:::
+::: {.column width="60%"}
+This module lists all server-side bookmarks of a shiny application, allows to describe them and feature the most relevant ones.
+:::
+:::
+
+### Boxplot by [{dv.explorer.parameter}](https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/boxplot.html){target="_blank"} 
+::: columns
+::: {.column width="40%"}
+
+```{r}
+#| warning: false
+#| lightbox:
+#|   group: boxplot
+source("carousel/carousel.R")
+images <- list(
+  list(
+    image = "images/modules/boxplot/1.png",
+    link = "images/modules/boxplot/1.png"
+  ),
+  list(
+    image = "images/modules/boxplot/2.png",
+    link = "images/modules/boxplot/2.png"
+  ),
+  list(
+    image = "images/modules/boxplot/3.png",
+    link = "images/modules/boxplot/3.png"
+  ),
+  list(
+    image = "images/modules/boxplot/4.png",
+    link = "images/modules/boxplot/4.png"
+  )
+)
+carousel("boxplot-gallery-carousel", 5000, images)
+```
+
+:::
+::: {.column width="60%"}
+The boxplot module allows visualizing parameter data from ADaM basic data structure as boxplots. Data can be displayed with different levels of grouping, listings with single subject data and the possibility of examining patient details other modules (e.g. Patient Profile). It also includes some statistical testing comparing the distribution of different groups.
+:::
+:::
+
+### Clinical timelines by [{dv.clinlines}](https://boehringer-ingelheim.github.io/dv.clinlines/){target="_blank"} 
+::: columns
+::: {.column width="40%"}
+
+```{r}
+#| warning: false
+#| lightbox:
+#|   group: clinlines
+source("carousel/carousel.R")
+images <- list(
+  list(
+    image = "images/modules/clinical_timelines/1.png",
+    link = "images/modules/clinical_timelines/1.png"
+  ),
+  list(
+    image = "images/modules/Clinical_timelines/2.png",
+    link = "images/modules/clinical_timelines/2.png"
+  ),
+  list(
+    image = "images/modules/clinical_timelines/3.png",
+    link = "images/modules/clinical_timelines/3.png"
+  )
+)
+carousel("clinlines-gallery-carousel", 5000, images)
+```
+
+:::
+::: {.column width="60%"}
+The Clinical Timelines module allows to display subject level data over time to present dates and/or time intervals of trial events, like adverse events, concomitant medications, randomization dates, and more.
+:::
+:::
+
+### Correlation heatmap by [{dv.explorer.parameter}](https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/correlation_heatmap.html){target="_blank"} 
+::: columns
+::: {.column width="40%"}
+
+```{r}
+#| warning: false
+#| lightbox:
+#|   group: correlation-heatmap
+# source("carousel/carousel.R")
+# images <- list(
+#   list(
+#     image = "images/modules/Clinical Timelines/1.png"
+#   ),
+#   list(
+#     image = "images/modules/Clinical Timelines/2.png"
+#   ),
+#   list(
+#     image = "images/modules/Clinical Timelines/3.png"
+#   )
+# )
+# carousel("gallery-carousel", 5000, images)
+
+```
+![](images/modules/correlation_heatmap/1.png){width=80% fig-align="center" .lightbox group="correlation_heatmap-gallery"}
+:::
+::: {.column width="60%"}
+The correlation heatmap module allows examining the correlation of several parameters using a correlation heatmap with different statistical measures.
+:::
+:::
+
+### eDISH by [{dv.edish}](https://boehringer-ingelheim.github.io/dv.edish/){target="_blank"} 
+::: columns
+::: {.column width="40%"}
+
+```{r}
+#| warning: false
+#| lightbox:
+#|   group: edsih
+source("carousel/carousel.R")
+images <- list(
+  list(
+    image = "images/modules/edish/1.png"
+  ),
+  list(
+    image = "images/modules/edish/2.png"
+  ),
+  list(
+    image = "images/modules/edish/3.png"
+  )
+)
+carousel("edish-gallery-carousel", 5000, images)
+```
+
+:::
+::: {.column width="60%"}
+The eDISH module is meant to support the assessment of drug-induced liver injury by means of the (modified) evaluation of Drug-Induced Serious Hepatotoxicity plot.
+:::
+:::
+
+### Forestplot by [{dv.explorer.parameter}](https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/forest.html){target="_blank"} 
+::: columns
+::: {.column width="40%"}
+
+```{r}
+#| warning: false
+#| lightbox:
+#|   group: forrestplot
+# source("carousel/carousel.R")
+# images <- list(
+#   list(
+#     image = "images/modules/forestplot/1.png"
+#   ),
+#   list(
+#     image = "images/modules/forestplot/2.png"
+#   ),
+#   list(
+#     image = "images/modules/forestplot/3.png"
+#   )
+# )
+# carousel("forestplot-gallery-carousel", 5000, images)
+```
+![](images/modules/forestplot/1.png){width=80% fig-align="center" .lightbox group="forestplot-gallery"}
+:::
+::: {.column width="60%"}
+The forest plot module allows examining the correlation of several parameters with a continuous variable in the form of a forest plot. Several correlation measures and groupings are available.
+:::
+:::
+
+### Lineplot by [{dv.explorer.parameter}](https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/lineplot.html){target="_blank"} 
+::: columns
+::: {.column width="40%"}
+
+```{r}
+#| warning: false
+#| lightbox:
+#|   group: lineplot
+# source("carousel/carousel.R")
+# images <- list(
+#   list(
+#     image = "images/modules/lineplot/1.png"
+#   ),
+#   list(
+#     image = "images/modules/lineplot/2.png"
+#   ),
+#   list(
+#     image = "images/modules/lineplot/3.png"
+#   )
+# )
+# carousel("lineplot-gallery-carousel", 5000, images)
+```
+![](images/modules/lineplot/1.png){width=80% fig-align="center" .lightbox group="lineplot-gallery"}
+:::
+::: {.column width="60%"}
+The lineplot module allows examining the evolution of parameter values using lineplots with different levels of grouping and aggregation measures.
+:::
+:::
+
+### Listings by [{dv.listings}](https://boehringer-ingelheim.github.io/dv.listings/){target="_blank"} 
+::: columns
+::: {.column width="40%"}
+
+```{r}
+#| warning: false
 #| lightbox:
 #|   group: listings
-#|   description: This is the Listings module
 source("carousel/carousel.R")
-carousel("gallery-carousel", 5000,
-       yaml.load_file("carousel/carousel.yml"))
+carousel("listings-gallery-carousel", 5000, yaml.load_file("carousel/carousel.yml"))
 ```
 
 :::
@@ -45,4 +255,147 @@ carousel("gallery-carousel", 5000,
 The listings module displays arbitrary datasets as listings. Users can select the dataset to be shown, and specify which columns of the dataset should be displayed as well as their order. The displayed columns can be sorted and filtered. Moreover, the table can be filtered to show only entries containing a keyword entered by the user. The module is not limited to usage of one data source, most notably, it can handle data from ADaM or SDTM.
 :::
 :::
+
+### Patient profile by [{dv.papo}](https://boehringer-ingelheim.github.io/dv.papo/){target="_blank"} 
+::: columns
+::: {.column width="40%"}
+
+```{r}
+#| warning: false
+#| lightbox:
+#|   group: papo
+source("carousel/carousel.R")
+images <- list(
+  list(
+    image = "images/modules/patient_profile/1.png"
+  ),
+  list(
+    image = "images/modules/patient_profile/2.png"
+  ),
+  list(
+    image = "images/modules/patient_profile/3.png"
+  )#,
+  # list(
+  #   image = "https://github.com/Boehringer-Ingelheim/dv.papo/blob/main/man/figures/demo.png"
+  # )
+)
+carousel("papo-gallery-carousel", 5000, images)
+```
+
+:::
+::: {.column width="60%"}
+The Patient Profile module allows to display subject level information and subject related data listings as well as plots for adverse events, concomitant medications, lab values, and vital signs over time.
+:::
+:::
+
+### ROC by [{dv.explorer.parameter}](https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/roc.html){target="_blank"} 
+::: columns
+::: {.column width="40%"}
+
+```{r}
+#| warning: false
+#| lightbox:
+#|   group: roc
+source("carousel/carousel.R")
+images <- list(
+  list(
+    image = "images/modules/roc/1.png"
+  ),
+  list(
+    image = "images/modules/roc/2.png"
+  ),
+  list(
+    image = "images/modules/roc/3.png"
+  ),
+  list(
+    image = "images/modules/roc/4.png"
+  ),
+  list(
+    image = "images/modules/roc/5.png"
+  ),
+  list(
+    image = "images/modules/roc/6.png"
+  ),
+  list(
+    image = "images/modules/roc/7.png"
+  )
+)
+carousel("roc-gallery-carousel", 5000, images)
+```
+
+:::
+::: {.column width="60%"}
+The ROC module makes it possible to visualize a set of ROC related charts, or tables, and compare independent ROC curves for different continuous parameters with respect to a single binary endpoint. This allows a user to evaluate how predictive is a continuous parameter of binary endpoint.
+:::
+:::
+
+### Scatterplot by [{dv.explorer.parameter}](https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/scatterplot.html){target="_blank"} 
+::: columns
+::: {.column width="40%"}
+
+```{r}
+#| warning: false
+#| lightbox:
+#|   group: scatterplot
+# source("carousel/carousel.R")
+# carousel("scatterplot-gallery-carousel", 5000, images)
+```
+![](images/modules/scatterplot/1.png){width=80% fig-align="center" .lightbox group="scatterplot-gallery"}
+:::
+::: {.column width="60%"}
+The listings module displays arbitrary datasets as listings. Users can select the dataset to be shown, and specify which columns of the dataset should be displayed as well as their order. The displayed columns can be sorted and filtered. Moreover, the table can be filtered to show only entries containing a keyword entered by the user. The module is not limited to usage of one data source, most notably, it can handle data from ADaM or SDTM.
+:::
+:::
+### Scatterplot matrix by [{dv.explorer.parameter}](https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/scatterplotmatrix.html){target="_blank"} 
+::: columns
+::: {.column width="40%"}
+
+```{r}
+#| warning: false
+#| lightbox:
+#|   group: scatterplotmatrix
+# source("carousel/carousel.R")
+# 
+# carousel("scatterplotmatrix-gallery-carousel", 5000, images)
+```
+![](images/modules/scatterplot_matrix/1.png){width=80% fig-align="center" .lightbox group="scatterplotmatrix-gallery"}
+:::
+::: {.column width="60%"}
+The scatter module allows examining the correlation of several parameters using a scatterplot matrix with different levels of grouping.
+:::
+:::
+### Waterfall plus heatmap by [{dv.explorer.parameter}](https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/wfphm.html){target="_blank"} 
+::: columns
+::: {.column width="40%"}
+
+```{r}
+#| warning: false
+#| lightbox:
+#|   group: waterfall_plus_heatmap
+# source("carousel/carousel.R")
+# 
+# carousel("waterfall_plus_heatmap-gallery-carousel", 5000, images)
+```
+![](images/modules/waterfall_plus_heatmap/1.png){width=80% fig-align="center" .lightbox group="waterfall_plus_heatmap-gallery"}
+:::
+::: {.column width="60%"}
+The Waterfall plus heatmap module package includes a waterfall plot and aligned categorical continuous and parameter heatmaps.
+:::
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
