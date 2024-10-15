@@ -1,4 +1,5 @@
 #### Code from: https://github.com/quarto-dev/quarto-web/blob/main/docs/gallery/carousel.R
+#### Changes from quarto-web tagged with "NOTE: Change"
 library(htmltools)
 library(yaml)
 
@@ -13,7 +14,7 @@ carousel <- function(id, duration, items) {
       link = item$link,
       index = index,
       interval = duration,
-      gallery_id = id
+      gallery_id = id # NOTE: change
     )
   })
 
@@ -35,13 +36,15 @@ carousel <- function(id, duration, items) {
     `data-bs-ride`="carousel",
     indicators,
     items,
-    navButton(id, "prev", "Prevoius"),
+    navButton(id, "prev", "Previous"),
     navButton(id, "next", "Next")
   )
 }
 
 # carousel item
-carouselItem <- function(caption, image, link, index, interval, gallery_id) {
+carouselItem <- function(
+  caption, image, link, index, interval,
+  gallery_id) { # NOTE: Change
   id <- paste0("gallery-carousel-item-", index)
   button <- tags$button(
     type = "button",
@@ -56,6 +59,14 @@ carouselItem <- function(caption, image, link, index, interval, gallery_id) {
       `aria-current` = "true"
     )
   }
+  # NOTE: original
+  #item <- div(class = paste0("carousel-item", ifelse(index == 0, " active", "")),
+  #            `data-bs-interval` = interval,
+  #            a(href = link, img(src = image, class = "d-block  mx-auto border")),
+  #            div(class = "carousel-caption d-none d-md-block",
+  #                tags$p(class = "fw-light", caption)
+  #            )
+  # NOTE: change
   item <- div(
     class = paste0(
       "carousel-item",
@@ -67,7 +78,7 @@ carouselItem <- function(caption, image, link, index, interval, gallery_id) {
     class = "lightbox",
     `data-gallery` = gallery_id,
     div(
-      img(src = image, class = "d-block  mx-auto border lightbox", style = "width: 80%"),
+      img(src = image, class = "d-block  mx-auto border", style = "width: 80%"),
       style = "height: 200px"
       ),
     ),
