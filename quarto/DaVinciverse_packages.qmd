@@ -12,7 +12,7 @@ The DaVinciverse consists of the following packages:
 :::
 ::: {.column width="80%"}
 ### [dv.loader](https://boehringer-ingelheim.github.io/dv.loader/)
-Data Loading Module
+The {dv.loader} package facilitates data loading from either a local or remote source.
 :::
 
 ::: {.column width="20%"}
@@ -20,7 +20,7 @@ Data Loading Module
 :::
 ::: {.column width="80%"}
 ### [dv.filter](https://boehringer-ingelheim.github.io/dv.filter/)
-Dynamic Data Filtering Module 
+The {dv.filter} package enables dynamic data filtering.
 :::
 
 ::: {.column width="20%"}
@@ -28,7 +28,7 @@ Dynamic Data Filtering Module
 :::
 ::: {.column width="80%"}
 ### [dv.manager](dv.manager.qmd)  
-dv.manager package is designed to make it quick and easy to create and deploy Shiny applications using the modules from DaVinci.
+The {dv.manager} package is designed to make it quick and easy to create and deploy Shiny applications containing DaVinci modules.
 :::
 
 ::: {.column width="20%"}
@@ -36,7 +36,7 @@ dv.manager package is designed to make it quick and easy to create and deploy Sh
 :::
 ::: {.column width="80%"}
 ### [dv.listings](dv.listings.qmd)
-dv.listings module displays arbitrary datasets as listings.
+The Listings module displays arbitrary datasets as listings.
 :::
 
 :::

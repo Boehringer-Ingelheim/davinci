@@ -10,27 +10,29 @@ DaVinci provides tools to review, aggregate and visualize data to develop and de
 
 ### The modular approach
 
-To create an app you need to identify which modules to include in the first place. Think of each DaVinci module as individual building stone that you can put together to build a vehicle for a certain purpose. If you want to go fast, build a motorcycle, if you want to go far build a common car. The vehicle refers to the DaVinci app that you create according to your use case.
+To create an app, you need to first identify which modules to include. Consider each DaVinci module as individual building stone that you can put together to build a vehicle for a certain purpose. If you want to go fast, build a motorcycle, but if distance is your goal, build a regular car. The constructed vehicle symbolizes the DaVinci app that you create according to your use case.
 
 ![](quarto/images/building_blocks.png){fig-align="center"}
 
 
-For that purpose, modules are provided as R packages. One package contains one or multiple modules. Choose the modules freely according to the purpose of your visualization. For data cleaning purposes you might not need a heatmap, but you may want to incorporate it for biomarker analyses. Safety review might benefit from an eDISH plot, and all of them probably want to display listings as well. These are only suggestions, modules can be combined freely. Some of them are even able to communicate with each other. 
+DaVinci modules are provided as R packages, with each package containing one or multiple modules. Choose the modules freely according to the purpose of your visualization. For instance, while a heatmap may not be necessary for data cleaning, it could be useful for biomarker analyses. Safety review might benefit from an eDISH plot, and listings are likely to be needed in all use cases. These are only examples, modules can be combined as needed. Some modules even have the capability to interact with each other. 
 For more details about how to actually create an app, refer to [Getting Started](quarto/getting_started.qmd). An overview of all modules can be found [here](quarto/modules.qmd). 
 
 
-### The DaVinci framework consists of the following packages:  
+### The DaVinci framework 
+
+The DaVinci framework consists of the following packages:  
 
 
 |   package       | description |
 |-----------------|-------------|
-|[{dv.bookman}](https://boehringer-ingelheim.github.io/dv.bookman/){target="_blank"}| Bookmarking manager module |
-|[{dv.clinlines}](https://boehringer-ingelheim.github.io/dv.clinlines/){target="_blank"}| clinical timelines module|
-|[{dv.edish}](https://boehringer-ingelheim.github.io/dv.edish/){target="_blank"}| eDISH module |
-|[{dv.explorer.parameter}](https://boehringer-ingelheim.github.io/dv.explorer.parameter/){target="_blank"}| Parameter exploration modules |
-|[{dv.filter}](https://boehringer-ingelheim.github.io/dv.filter/){target="_blank"}| Dynamic data filtering package |
-|[{dv.listings}](https://boehringer-ingelheim.github.io/dv.listings/){target="_blank"}| Listings module displays arbitrary datasets as listings. |
-|[{dv.loader}](https://boehringer-ingelheim.github.io/dv.loader/){target="_blank"}| Data loading package for DaVinci |
-|[{dv.manager}](https://boehringer-ingelheim.github.io/dv.manager/){target="_blank"}| {dv.manager} package is designed to make it quick and easy to create and deploy Shiny applications using the modules from DaVinci. |
-|[{dv.papo}](https://boehringer-ingelheim.github.io/dv.papo/){target="_blank"}| Patient profile module |
+|[{dv.bookman}](https://boehringer-ingelheim.github.io/dv.bookman/){target="_blank"}| The Bookmark Manager module allows to safe app configurations and restore them at a later point in time from a centralized view. |
+|[{dv.clinlines}](https://boehringer-ingelheim.github.io/dv.clinlines/){target="_blank"}| The Clinical Timelines module offers an overview of pre-defined events and time intervals for all subjects over time. |
+|[{dv.edish}](https://boehringer-ingelheim.github.io/dv.edish/){target="_blank"}| The eDISH module supports the assessment of drug-induced liver injury by means of the (modified) evaluation of Drug-Induced Serious Hepatotoxicity plot. |
+|[{dv.explorer.parameter}](https://boehringer-ingelheim.github.io/dv.explorer.parameter/){target="_blank"}| The {dv.explorer.parameter} package contains multiple modules offering statistical plots like the Boxplot module, Correlation Heatmap module, Forest Plot module, Lineplot module, ROC (receiver operating characteristics) module, Scatterplot module, Matrix of Scatterplots module, and the Waterfall Plus Heatmap module. |
+|[{dv.filter}](https://boehringer-ingelheim.github.io/dv.filter/){target="_blank"}| The {dv.filter} package enables dynamic data filtering. |
+|[{dv.listings}](https://boehringer-ingelheim.github.io/dv.listings/){target="_blank"}| The Listings module displays arbitrary datasets as listings. |
+|[{dv.loader}](https://boehringer-ingelheim.github.io/dv.loader/){target="_blank"}| The {dv.loader} package facilitates data loading from either a local or remote source. |
+|[{dv.manager}](https://boehringer-ingelheim.github.io/dv.manager/){target="_blank"}| The {dv.manager} package is designed to make it quick and easy to create and deploy Shiny applications containing DaVinci modules. |
+|[{dv.papo}](https://boehringer-ingelheim.github.io/dv.papo/){target="_blank"}| The Patient Profile module presents data on subject-level. |
 : {tbl-colwidths="[25,75]"}

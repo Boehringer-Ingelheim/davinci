@@ -10,11 +10,11 @@ execute:
 
 #### Environment Setup
 
-Please ensure that R version 4.0.0 or higher is installed on your computer. This is required to install all DaVinci packages and its dependencies. You can check your current version of R by running `sessionInfo()` within the R console.
+Please ensure that R version 4.0.0 or higher is installed on your computer. This is required to install all DaVinci packages and their dependencies. To check your current version of R, execute `sessionInfo()` within the R console.
 
 #### Installing the DaVinci packages
 
-More information on the modules and the corresponding package can be found [here](quarto/modules.qmd) or on each individual package documentation. 
+More information on the modules and the corresponding package can be found [here](quarto/modules.qmd) or in each individual package documentation. 
 
 To install all DaVinci packages, run the following lines of code:
 ``` {r}
@@ -42,7 +42,7 @@ You can also speed up the installation by using [{pak}](https://pak.r-lib.org/){
 
 ### How to set up your first App
 
-In this section the app creation process will be explained on a simple run able example. 
+In this section, the app creation process will be explained by means of a simple, executable example. 
 
 The app creation process can be split into 4 steps.  
 1. Loading the data  
@@ -85,7 +85,7 @@ data_list <- list(
 #### 2. Preparing the data
 
 In order to be able to use the data together with the DaVinci modules some pre-processing is needed.
-The modules themselves do data provisioning and derivations as little as possible. This assure that the modules are as flexible as possible and work with almost all data sources like SDTM or ADaM.
+The modules themselves minimally handle data provisioning and derivations to ensure maximal flexibility. This assures compatibility with almost all data sources like SDTM or ADaM.
 
 ``` {r}
 #| echo: true
