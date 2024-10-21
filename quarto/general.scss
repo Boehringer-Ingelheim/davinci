@@ -1,8 +1,13 @@
 /*-- scss:defaults --*/
 
-
-//$body-bg: #E5E3DE;
-$body-bg: #F6F5F3;
+/*
+// Base document colors
+$body-bg: #181818;
+$body-color: white;
+$link-color: #75AADB;
+*/
+$body-bg: #E5E3DE;
+//$body-color: #F6F5F3;
 $link-color: #70A0CC;
 $nav-tabs-link-active-bg: #00E47C;
 $nav-tabs-link-active-color: #00E47C;
@@ -11,6 +16,8 @@ $nav-tabs-link-active-color: #00E47C;
 $navbar-bg: #002b36;
 $navbar-fg: #00E47C;
 $navbar-hl: #00E47C;
+//$nav-tabs-link-active-bg: #00E47C;
+//$nav-tabs-link-active-color: #00E47C;
 
 // Footer
 $footer-bg: #002b36;

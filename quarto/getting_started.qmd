@@ -1,0 +1,156 @@
+---
+title: "Getting Started"
+execute:
+  echo: false
+---
+
+## How to get started with DaVinci?
+
+### Environment Setup and Package Installation
+
+#### Environment Setup
+
+Please ensure that R version 4.0.0 or higher is installed on your computer. This is required to install all DaVinci packages and their dependencies. To check your current version of R, execute `sessionInfo()` within the R console.
+
+#### Installing the DaVinci packages
+
+More information on the modules and the corresponding package can be found [here](quarto/modules.qmd) or in each individual package documentation. 
+
+To install all DaVinci packages, run the following lines of code:
+``` {r}
+#| echo: true
+#| eval: false
+if (!require("remotes")) install.packages("remotes")
+davinci_packages <- c(
+  "dv.filter", 
+  "dv.loader", 
+  "dv.manager", 
+  "dv.bookman", 
+  "dv.clinlines", 
+  "dv.edish", 
+  "dv.explorer.parameter", 
+  "dv.listings",
+  "dv.papo"
+)
+
+for (pkg in davinci_packages) {
+  remotes::install_github(paste0("Boehringer-Ingelheim/", pkg), upgrade = TRUE)
+}
+```
+You can also speed up the installation by using [{pak}](https://pak.r-lib.org/){target="_blank"} for installing the packages. 
+
+
+### How to set up your first App
+
+In this section, the app creation process will be explained by means of a simple, executable example. 
+
+The app creation process can be split into 4 steps.  
+1. Loading the data  
+2. Preparing the data  
+3. Setting up the modules  
+4. Launching the app  
+  
+
+#### 1. Loading the data
+
+First of all we need some data for the app. 
+You can use the functionalities of [{dv.loader}](https://boehringer-ingelheim.github.io/dv.loader/){target="_blank"} to load data from a filesystem. 
+
+``` {r}
+#| echo: true
+#| eval: false
+
+data_list <- dv.loader::load_data(
+  sub_dir = , # TODO: add path to your data
+  file_names = c("dm", "ae", "lb")
+)
+
+```
+
+To have a running example we will use data from the [{pharamversesdtm}](https://pharmaverse.github.io/pharmaversesdtm/){target="_blank"} package.
+``` {r}
+#| echo: true
+#| eval: false
+
+if (!require("pharmaversesdtm")) install.packages("pharmaversesdtm")
+
+data_list <- list(
+  dm = pharmaversesdtm::dm,
+  ae = pharmaversesdtm::ae,
+  lb = pharmaversesdtm::lb
+)
+
+```
+
+#### 2. Preparing the data
+
+In order to be able to use the data together with the DaVinci modules some pre-processing is needed.
+The modules themselves minimally handle data provisioning and derivations to ensure maximal flexibility. This assures compatibility with almost all data sources like SDTM or ADaM.
+
+``` {r}
+#| echo: true
+#| eval: false
+
+# Convert data to appropriate types
+data_list[["dm"]] <- dv.listings::convert_data(data_list[["dm"]])
+data_list[["ae"]] <- dv.listings::convert_data(data_list[["ae"]])
+data_list[["lb"]] <- dv.listings::convert_data(data_list[["lb"]])
+
+# Assign meaningful labels to data domain names
+attributes(data_list$dm)$label <- "Subject Level"
+attributes(data_list$ae)$label <- "Adverse Events"
+attributes(data_list$lb)$label <- "Laboratory data"
+
+```
+
+#### 3. Setting up the modules
+
+``` {r}
+#| echo: true
+#| eval: false
+
+# Specify default variables
+default_vars <- list(
+  dm = c("STUDYID", "USUBJID", "SITEID", "ARM"),
+  ae = c("STUDYID", "USUBJID", "AESOC", "AETERM", "AESTDY", "AEENDY", "AESER"),
+  lb = c("STUDYID", "USUBJID", "LBTEST", "LBORRES")
+)
+
+# Module list
+module_list <- list(
+  "Listings" = dv.listings::mod_listings(
+    module_id = "mod1",
+    dataset_names = c("dm", "ae", "lb"),
+    default_vars = default_vars
+  )
+)
+
+```
+
+You can add additional modules to the app by including them into the module_list. 
+Lets add the eDISH module as well. 
+``` {r}
+#| echo: true
+#| eval: false
+
+module_list[["edish"]] <- dv.edish::mod_edish(
+    module_id = "edish",
+    dataset_names = c("dm", "lb"),
+    arm_default_vals = c("Xanomeline Low Dose", "Xanomeline High Dose"),
+    baseline_visit_val = "SCREENING 1"
+  )
+```
+
+#### 4. Launching the app
+In this step you combine everything and launch the app.  
+You can found more information on `run_app()` [here](https://boehringer-ingelheim.github.io/dv.manager/reference/run_app.html){target="_blank"}
+``` {r}
+#| echo: true
+#| eval: false
+
+dv.manager::run_app(
+  data = list("MyData" = data_list),
+  module_list = module_list,
+  filter_data = "dm"
+)
+```
