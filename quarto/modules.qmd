@@ -90,7 +90,7 @@ describe_module(
   'The lineplot module allows examining the evolution of parameter values using lineplots with different levels of grouping and aggregation measures.'
 )
 describe_module(
-  'Listings', 'dv.listings', 'https://boehringer-ingelheim.github.io/dv.listings/', 'Listings',
+  'Listings', 'dv.listings', 'https://boehringer-ingelheim.github.io/dv.listings/', 'listings',
   'The listings module displays arbitrary datasets as listings. Users can select the dataset to be shown, and specify which columns of the dataset should be displayed as well as their order. The displayed columns can be sorted and filtered. Moreover, the table can be filtered to show only entries containing a keyword entered by the user. The module is not limited to usage of one data source, most notably, it can handle data from ADaM or SDTM.'
 )
 describe_module(
