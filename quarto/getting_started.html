@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DaVinci</title>
+<title>DaVinci - Getting Started</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,24 +20,58 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="quarto/style.scss">
+<link rel="stylesheet" href="../quarto/style.scss">
 </head>
 
 <body class="nav-fixed">
@@ -77,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">DaVinci</span>
     </a>
   </div>
@@ -88,11 +122,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./quarto/getting_started.html"> 
+    <a class="nav-link active" href="../quarto/getting_started.html" aria-current="page"> 
 <span class="menu-text">Getting Started</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./quarto/modules.html"> 
+    <a class="nav-link" href="../quarto/modules.html"> 
 <span class="menu-text">DaVinci Modules</span></a>
   </li>  
 </ul>
@@ -131,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">DaVinci</h1>
+<h1 class="title">Getting Started</h1>
 </div>
 
 
@@ -148,77 +182,125 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="dynamic-visualization-for-clinical-insights-davinci" class="level2">
-<h2 class="anchored" data-anchor-id="dynamic-visualization-for-clinical-insights-davinci">Dynamic Visualization for Clinical Insights (DaVinci)</h2>
-<section id="what-is-davinci" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-davinci">What is DaVinci?</h3>
-<p>DaVinci provides tools to review, aggregate and visualize data to develop and deliver safe and effective treatments for patients. Instead of creating entire R/Shiny applications, DaVinci provides individual modules. Modules are functional building blocks that can be linked together into customized apps. This customization enables App Creators to build their own app according to trial-specific needs without deep R knowledge. The concept of developing loosely coupled, functional units and composing them into a larger application is subsequently referred to as modular approach.</p>
+<section id="how-to-get-started-with-davinci" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-get-started-with-davinci">How to get started with DaVinci?</h2>
+<section id="environment-setup-and-package-installation" class="level3">
+<h3 class="anchored" data-anchor-id="environment-setup-and-package-installation">Environment Setup and Package Installation</h3>
+<section id="environment-setup" class="level4">
+<h4 class="anchored" data-anchor-id="environment-setup">Environment Setup</h4>
+<p>Please ensure that R version 4.0.0 or higher is installed on your computer. This is required to install all DaVinci packages and their dependencies. To check your current version of R, execute <code>sessionInfo()</code> within the R console.</p>
 </section>
-<section id="the-modular-approach" class="level3">
-<h3 class="anchored" data-anchor-id="the-modular-approach">The modular approach</h3>
-<p>To create an app, you need to first identify which modules to include. Consider each DaVinci module as individual building stone that you can put together to build a vehicle for a certain purpose. If you want to go fast, build a motorcycle, but if distance is your goal, build a regular car. The constructed vehicle symbolizes the DaVinci app that you create according to your use case.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="quarto/images/building_blocks.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
+<section id="installing-the-davinci-packages" class="level4">
+<h4 class="anchored" data-anchor-id="installing-the-davinci-packages">Installing the DaVinci packages</h4>
+<p>More information on the modules and the corresponding package can be found <a href="quarto/modules.qmd">here</a> or in each individual package documentation.</p>
+<p>To install all DaVinci packages, run the following lines of code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"remotes"</span>)) <span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>davinci_packages <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"dv.filter"</span>, </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"dv.loader"</span>, </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"dv.manager"</span>, </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"dv.bookman"</span>, </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"dv.clinlines"</span>, </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"dv.edish"</span>, </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"dv.explorer.parameter"</span>, </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"dv.listings"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"dv.papo"</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (pkg <span class="cf">in</span> davinci_packages) {</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="fu">paste0</span>(<span class="st">"Boehringer-Ingelheim/"</span>, pkg), <span class="at">upgrade =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>DaVinci modules are provided as R packages, with each package containing one or multiple modules. Choose the modules freely according to the purpose of your visualization. For instance, while a heatmap may not be necessary for data cleaning, it could be useful for biomarker analyses. Safety review might benefit from an eDISH plot, and listings are likely to be needed in all use cases. These are only examples, modules can be combined as needed. Some modules even have the capability to interact with each other. For more details about how to actually create an app, refer to <a href="./quarto/getting_started.html">Getting Started</a>. An overview of all modules can be found <a href="./quarto/modules.html">here</a>.</p>
+<p>You can also speed up the installation by using <a href="https://pak.r-lib.org/" target="_blank">{pak}</a> for installing the packages.</p>
 </section>
-<section id="the-davinci-framework" class="level3">
-<h3 class="anchored" data-anchor-id="the-davinci-framework">The DaVinci framework</h3>
-<p>The DaVinci framework consists of the following packages:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 75%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>package</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="https://boehringer-ingelheim.github.io/dv.bookman/" target="_blank">{dv.bookman}</a></td>
-<td>The Bookmark Manager module allows to safe app configurations and restore them at a later point in time from a centralized view.</td>
-</tr>
-<tr class="even">
-<td><a href="https://boehringer-ingelheim.github.io/dv.clinlines/" target="_blank">{dv.clinlines}</a></td>
-<td>The Clinical Timelines module offers an overview of pre-defined events and time intervals for all subjects over time.</td>
-</tr>
-<tr class="odd">
-<td><a href="https://boehringer-ingelheim.github.io/dv.edish/" target="_blank">{dv.edish}</a></td>
-<td>The eDISH module supports the assessment of drug-induced liver injury by means of the (modified) evaluation of Drug-Induced Serious Hepatotoxicity plot.</td>
-</tr>
-<tr class="even">
-<td><a href="https://boehringer-ingelheim.github.io/dv.explorer.parameter/" target="_blank">{dv.explorer.parameter}</a></td>
-<td>The {dv.explorer.parameter} package contains multiple modules offering statistical plots like the Boxplot module, Correlation Heatmap module, Forest Plot module, Lineplot module, ROC (receiver operating characteristics) module, Scatterplot module, Matrix of Scatterplots module, and the Waterfall Plus Heatmap module.</td>
-</tr>
-<tr class="odd">
-<td><a href="https://boehringer-ingelheim.github.io/dv.filter/" target="_blank">{dv.filter}</a></td>
-<td>The {dv.filter} package enables dynamic data filtering.</td>
-</tr>
-<tr class="even">
-<td><a href="https://boehringer-ingelheim.github.io/dv.listings/" target="_blank">{dv.listings}</a></td>
-<td>The Listings module displays arbitrary datasets as listings.</td>
-</tr>
-<tr class="odd">
-<td><a href="https://boehringer-ingelheim.github.io/dv.loader/" target="_blank">{dv.loader}</a></td>
-<td>The {dv.loader} package facilitates data loading from either a local or remote source.</td>
-</tr>
-<tr class="even">
-<td><a href="https://boehringer-ingelheim.github.io/dv.manager/" target="_blank">{dv.manager}</a></td>
-<td>The {dv.manager} package is designed to make it quick and easy to create and deploy Shiny applications containing DaVinci modules.</td>
-</tr>
-<tr class="odd">
-<td><a href="https://boehringer-ingelheim.github.io/dv.papo/" target="_blank">{dv.papo}</a></td>
-<td>The Patient Profile module presents data on subject-level.</td>
-</tr>
-</tbody>
-</table>
+</section>
+<section id="how-to-set-up-your-first-app" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-set-up-your-first-app">How to set up your first App</h3>
+<p>In this section, the app creation process will be explained by means of a simple, executable example.</p>
+<p>The app creation process can be split into 4 steps.<br>
+1. Loading the data<br>
+2. Preparing the data<br>
+3. Setting up the modules<br>
+4. Launching the app</p>
+<section id="loading-the-data" class="level4">
+<h4 class="anchored" data-anchor-id="loading-the-data">1. Loading the data</h4>
+<p>First of all we need some data for the app. You can use the functionalities of <a href="https://boehringer-ingelheim.github.io/dv.loader/" target="_blank">{dv.loader}</a> to load data from a filesystem.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data_list <span class="ot">&lt;-</span> dv.loader<span class="sc">::</span><span class="fu">load_data</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">sub_dir =</span> , <span class="co"># </span><span class="al">TODO</span><span class="co">: add path to your data</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">file_names =</span> <span class="fu">c</span>(<span class="st">"dm"</span>, <span class="st">"ae"</span>, <span class="st">"lb"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To have a running example we will use data from the <a href="https://pharmaverse.github.io/pharmaversesdtm/" target="_blank">{pharamversesdtm}</a> package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pharmaversesdtm"</span>)) <span class="fu">install.packages</span>(<span class="st">"pharmaversesdtm"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>data_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">dm =</span> pharmaversesdtm<span class="sc">::</span>dm,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">ae =</span> pharmaversesdtm<span class="sc">::</span>ae,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">lb =</span> pharmaversesdtm<span class="sc">::</span>lb</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="preparing-the-data" class="level4">
+<h4 class="anchored" data-anchor-id="preparing-the-data">2. Preparing the data</h4>
+<p>In order to be able to use the data together with the DaVinci modules some pre-processing is needed. The modules themselves minimally handle data provisioning and derivations to ensure maximal flexibility. This assures compatibility with almost all data sources like SDTM or ADaM.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert data to appropriate types</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>data_list[[<span class="st">"dm"</span>]] <span class="ot">&lt;-</span> dv.listings<span class="sc">::</span><span class="fu">convert_data</span>(data_list[[<span class="st">"dm"</span>]])</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>data_list[[<span class="st">"ae"</span>]] <span class="ot">&lt;-</span> dv.listings<span class="sc">::</span><span class="fu">convert_data</span>(data_list[[<span class="st">"ae"</span>]])</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>data_list[[<span class="st">"lb"</span>]] <span class="ot">&lt;-</span> dv.listings<span class="sc">::</span><span class="fu">convert_data</span>(data_list[[<span class="st">"lb"</span>]])</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign meaningful labels to data domain names</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(data_list<span class="sc">$</span>dm)<span class="sc">$</span>label <span class="ot">&lt;-</span> <span class="st">"Subject Level"</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(data_list<span class="sc">$</span>ae)<span class="sc">$</span>label <span class="ot">&lt;-</span> <span class="st">"Adverse Events"</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(data_list<span class="sc">$</span>lb)<span class="sc">$</span>label <span class="ot">&lt;-</span> <span class="st">"Laboratory data"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="setting-up-the-modules" class="level4">
+<h4 class="anchored" data-anchor-id="setting-up-the-modules">3. Setting up the modules</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify default variables</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>default_vars <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">dm =</span> <span class="fu">c</span>(<span class="st">"STUDYID"</span>, <span class="st">"USUBJID"</span>, <span class="st">"SITEID"</span>, <span class="st">"ARM"</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">ae =</span> <span class="fu">c</span>(<span class="st">"STUDYID"</span>, <span class="st">"USUBJID"</span>, <span class="st">"AESOC"</span>, <span class="st">"AETERM"</span>, <span class="st">"AESTDY"</span>, <span class="st">"AEENDY"</span>, <span class="st">"AESER"</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">lb =</span> <span class="fu">c</span>(<span class="st">"STUDYID"</span>, <span class="st">"USUBJID"</span>, <span class="st">"LBTEST"</span>, <span class="st">"LBORRES"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Module list</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>module_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Listings"</span> <span class="ot">=</span> dv.listings<span class="sc">::</span><span class="fu">mod_listings</span>(</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">module_id =</span> <span class="st">"mod1"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataset_names =</span> <span class="fu">c</span>(<span class="st">"dm"</span>, <span class="st">"ae"</span>, <span class="st">"lb"</span>),</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">default_vars =</span> default_vars</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can add additional modules to the app by including them into the module_list. Lets add the eDISH module as well.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>module_list[[<span class="st">"edish"</span>]] <span class="ot">&lt;-</span> dv.edish<span class="sc">::</span><span class="fu">mod_edish</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">module_id =</span> <span class="st">"edish"</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataset_names =</span> <span class="fu">c</span>(<span class="st">"dm"</span>, <span class="st">"lb"</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">arm_default_vals =</span> <span class="fu">c</span>(<span class="st">"Xanomeline Low Dose"</span>, <span class="st">"Xanomeline High Dose"</span>),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">baseline_visit_val =</span> <span class="st">"SCREENING 1"</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="launching-the-app" class="level4">
+<h4 class="anchored" data-anchor-id="launching-the-app">4. Launching the app</h4>
+<p>In this step you combine everything and launch the app.<br>
+You can found more information on <code>run_app()</code> <a href="https://boehringer-ingelheim.github.io/dv.manager/reference/run_app.html" target="_blank">here</a></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dv.manager<span class="sc">::</span><span class="fu">run_app</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> <span class="fu">list</span>(<span class="st">"MyData"</span> <span class="ot">=</span> data_list),</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">module_list =</span> module_list,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">filter_data =</span> <span class="st">"dm"</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
+</section>
 </section>
 </section>
 
