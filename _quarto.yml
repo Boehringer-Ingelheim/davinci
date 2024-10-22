@@ -15,7 +15,7 @@ website:
       - icon: github
         menu:
           - text: Source code
-            url: https://github.com/orgs/Boehringer-Ingelheim/teams/davinci/repositories
+            url: https://github.com/orgs/Boehringer-Ingelheim/repositories?q=dv.
             target: _blank
           - text: Report a Bug
             url: https://github.com/Boehringer-Ingelheim/davinci/issues/new?assignees=&labels=bug&projects=&template=bug_report.md&title=
