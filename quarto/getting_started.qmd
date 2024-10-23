@@ -14,7 +14,7 @@ Please ensure that R version 4.0.0 or higher is installed on your computer. This
 
 #### Installing the DaVinci packages
 
-More information on the modules and the corresponding package can be found [here](quarto/modules.qmd) or in each individual package documentation. 
+More information on the modules and the corresponding package can be found [here](modules.qmd) or in each individual package documentation. 
 
 To install all DaVinci packages, run the following lines of code:
 ``` {r}
