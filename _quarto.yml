@@ -31,7 +31,7 @@ website:
 format:
   html:
     theme: [cosmo, quarto/general.scss]
-    css: quarto/style.scss
+    css: styles.css
     toc: false
     page-layout: full
     anchor-sections: true

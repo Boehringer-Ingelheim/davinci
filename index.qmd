@@ -19,8 +19,8 @@ DaVinci modules are provided as R packages, with each package containing one or 
 
 
 ```{=html}
-<div><button onclick="window.location.href = 'quarto/getting_started.qmd';" class="button">Getting Started</button> explains what requriments need to be met and how to actual create an app.</div>
-<div><button onclick="window.location.href = 'quarto/modules.qmd';" class="button">DaVinci Modules</button> shows a complete list of all DaVinci modules.</div>
+<div><button onclick="window.location.href = 'quarto/getting_started.html';" class="button">Getting Started</button> explains what requriments need to be met and how to actual create an app.</div>
+<div><button onclick="window.location.href = 'quarto/modules.html';" class="button">DaVinci Modules</button> shows a complete list of all DaVinci modules.</div>
 ```
 
 
