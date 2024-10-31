@@ -460,8 +460,43 @@ ul.task-list li input[type="checkbox"] {
 <div class="columns">
 <div class="column" style="width:40%;">
 <div id="listings-gallery" class="carousel carousel-dark slide" data-bs-ride="carousel">
-  <div class="carousel-indicators"></div>
-  <div class="carousel-inner"></div>
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
+    <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="5000">
+      <a href="images/modules/listings/listings_1.png" class="lightbox" data-gallery="listings-gallery">
+        <div style="height: 200px">
+          <img src="images/modules/listings/listings_1.png" class="d-block  mx-auto border" style="width: 80%">
+        </div>
+      </a>
+      <div class="carousel-caption d-none d-md-block">
+        <p class="fw-light"></p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <a href="images/modules/listings/listings_2.png" class="lightbox" data-gallery="listings-gallery">
+        <div style="height: 200px">
+          <img src="images/modules/listings/listings_2.png" class="d-block  mx-auto border" style="width: 80%">
+        </div>
+      </a>
+      <div class="carousel-caption d-none d-md-block">
+        <p class="fw-light"></p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <a href="images/modules/listings/listings_3.png" class="lightbox" data-gallery="listings-gallery">
+        <div style="height: 200px">
+          <img src="images/modules/listings/listings_3.png" class="d-block  mx-auto border" style="width: 80%">
+        </div>
+      </a>
+      <div class="carousel-caption d-none d-md-block">
+        <p class="fw-light"></p>
+      </div>
+    </div>
+  </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#listings-gallery" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
@@ -1127,7 +1162,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":false});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
