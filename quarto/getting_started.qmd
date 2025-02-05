@@ -6,9 +6,9 @@ execute:
 
 ## How to get started with DaVinci?
 
-### Environment Setup and Package Installation
+### Environment setup and package installation
 
-#### Environment Setup
+#### Environment setup
 
 Please ensure that R version 4.0.0 or higher is installed on your computer. This is required to install all DaVinci packages and their dependencies. To check your current version of R, execute `sessionInfo()` within the R console.
 
@@ -22,15 +22,16 @@ To install all DaVinci packages, run the following lines of code:
 #| eval: false
 if (!require("remotes")) install.packages("remotes")
 davinci_packages <- c(
-  "dv.filter", 
+  "dv.manager",
   "dv.loader", 
-  "dv.manager", 
   "dv.bookman", 
   "dv.clinlines", 
   "dv.edish", 
   "dv.explorer.parameter", 
   "dv.listings",
-  "dv.papo"
+  "dv.papo",
+  "dv.tables",
+  "dv.teal"
 )
 
 for (pkg in davinci_packages) {

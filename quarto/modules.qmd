@@ -1,5 +1,5 @@
 ---
-title: "DaVinci Modules"
+title: "DaVinci Module Gallery"
 execute:
   echo: false
 format:
@@ -10,14 +10,13 @@ format:
 
 ## General packages
 
-### Data loader by [{dv.loader}](https://boehringer-ingelheim.github.io/dv.loader/){target="_blank"}
-The data loader supports the loading of data from a file system.
-
-### Global filter by [{dv.filter}](https://boehringer-ingelheim.github.io/dv.filter/){target="_blank"}
-The global filter provides variable filters that can be activated and deactivated at run time by the user. It is presented at the sidebar of each DaVinci App, thus it is incorporated into the module manager. When effective, only subjects who meet the filter criteria are displayed throughout all modules.
-
 ### Module Manager by [{dv.manager}](https://boehringer-ingelheim.github.io/dv.manager/){target="_blank"}
-The module manager is the heart of each DaVinci app and provides all requested outputs (also called modules), as well as meta information around the data. It takes care of jumping between modules, switching between data from different trials, and displaying a custom start-up message.
+The Module Manager is the heart of each DaVinci app. It is designed to act as container for the DaVinci modules and provide the necessary infrastructure for their operation. Additionally, {dv.manager} equips the resulting DaVinci app with various functionalities, like displaying the meta information of the data, jumping between modules, switching between different trials, or showing a custom start-up message.
+
+### Data loader by [{dv.loader}](https://boehringer-ingelheim.github.io/dv.loader/){target="_blank"}
+Besides the Module Manager, DaVinci provides another handy utility package called {dv.loader}. It facilitates data loading from either a local or remote source, such as a network file storage folder. Once the requested data is loaded, it can be passed through customized preprocessing routines and transferred to the Module Manager for display in the DaVinci app.
+
+
 
 
 ```{r results='asis'}
@@ -82,6 +81,10 @@ describe_module(
   'The eDISH module is meant to support the assessment of drug-induced liver injury by means of the (modified) evaluation of Drug-Induced Serious Hepatotoxicity plot.'
 )
 describe_module(
+  'Hierarchical count table', 'dv.tables', 'https://boehringer-ingelheim.github.io/dv.tables/', 'hierarchical_count',
+  'The hierarchical count table module enables the visualization of hierarchical tables, displaying event counts at each level for a clear and structured overview.'
+)
+describe_module(
   'Forest plot', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/forest.html', 'forestplot',
   'The forest plot module allows examining the correlation of several parameters with a continuous variable in the form of a forest plot. Several correlation measures and groupings are available.'
 )
@@ -114,3 +117,8 @@ describe_module(
   'The Waterfall plus heatmap module package includes a waterfall plot and aligned categorical continuous and parameter heatmaps.'
 )
 ```
+## Other useful packages
+
+### DaVinci's Teal wrapper package [{dv.teal}](https://boehringer-ingelheim.github.io/dv.teal/){target="_blank"}
+The dv.teal package provides a wrapper function to include Teal modules within the DaVinci framework.
+
