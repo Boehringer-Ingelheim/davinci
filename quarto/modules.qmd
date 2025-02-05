@@ -1,5 +1,5 @@
 ---
-title: "DaVinci Module Gallery"
+title: "Module Gallery"
 execute:
   echo: false
 format:
@@ -8,7 +8,7 @@ format:
 ---
 
 
-## General packages
+## General DaVinci packages
 
 ### Module Manager by [{dv.manager}](https://boehringer-ingelheim.github.io/dv.manager/){target="_blank"}
 The Module Manager is the heart of each DaVinci app. It is designed to act as container for the DaVinci modules and provide the necessary infrastructure for their operation. Additionally, {dv.manager} equips the resulting DaVinci app with various functionalities, like displaying the meta information of the data, jumping between modules, switching between different trials, or showing a custom start-up message.
@@ -58,7 +58,7 @@ describe_module <- function(name, package_name, url, image_folder, description) 
 }
 ```
 
-## Modules
+## DaVinci modules
 ```{r, results='asis'} 
 describe_module(
   'Bookmark manager', 'dv.bookman', 'https://boehringer-ingelheim.github.io/dv.bookman/', 'bookmark_manager',
