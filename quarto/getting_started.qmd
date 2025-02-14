@@ -22,8 +22,8 @@ To install all DaVinci packages, run the following lines of code:
 #| eval: false
 if (!require("remotes")) install.packages("remotes")
 davinci_packages <- c(
-  "dv.manager",
   "dv.loader", 
+  "dv.manager",
   "dv.bookman", 
   "dv.clinlines", 
   "dv.edish", 
