@@ -1,8 +1,7 @@
 ---
-title: "DaVinci"
+title: "DaVinci - Dynamic Visualization for Clinical Insights"
 ---
 
-## Dynamic Visualization for Clinical Insights (DaVinci)
 
 ### What is DaVinci?
 
