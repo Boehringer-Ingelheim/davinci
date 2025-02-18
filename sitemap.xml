@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://Boehringer-Ingelheim.github.io/davinci/index.html</loc>
-    <lastmod>2024-11-28T11:05:55.044Z</lastmod>
-  </url>
-  <url>
     <loc>https://Boehringer-Ingelheim.github.io/davinci/quarto/getting_started.html</loc>
-    <lastmod>2024-11-28T11:05:55.044Z</lastmod>
+    <lastmod>2025-02-18T13:30:29.788Z</lastmod>
   </url>
   <url>
-    <loc>https://Boehringer-Ingelheim.github.io/davinci/quarto/modules.html</loc>
-    <lastmod>2024-11-28T11:05:55.092Z</lastmod>
+    <loc>https://Boehringer-Ingelheim.github.io/davinci/index.html</loc>
+    <lastmod>2025-02-18T13:30:29.787Z</lastmod>
   </url>
   <url>
     <loc>https://Boehringer-Ingelheim.github.io/davinci/about.html</loc>
-    <lastmod>2024-11-28T11:05:55.044Z</lastmod>
+    <lastmod>2025-02-18T13:30:29.787Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Boehringer-Ingelheim.github.io/davinci/quarto/modules.html</loc>
+    <lastmod>2025-02-18T13:30:29.824Z</lastmod>
   </url>
 </urlset>
