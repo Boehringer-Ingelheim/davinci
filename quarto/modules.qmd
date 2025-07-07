@@ -113,6 +113,10 @@ describe_module(
   'The scatter module allows examining the correlation of several parameters using a scatterplot matrix with different levels of grouping.'
 )
 describe_module(
+  'Swimmerplot', 'dv.swimmerplot', 'https://boehringer-ingelheim.github.io/dv.swimmerplot/', 'swimmerplot',
+  'The Swimmerplot module enables users to create interactive swimmer plots for clinical trial data. Each patient is displayed as a horizontal swim lane showing their treatment timeline, with arrows indicating ongoing treatments and optional markers for clinical responses like tumor shrinkage or disease progression.'
+)
+describe_module(
   'Waterfall plus heatmap', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/wfphm.html', 'waterfall_plus_heatmap',
   'The Waterfall plus heatmap module package includes a waterfall plot and aligned categorical continuous and parameter heatmaps.'
 )

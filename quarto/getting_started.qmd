@@ -30,6 +30,7 @@ davinci_packages <- c(
   "dv.explorer.parameter", 
   "dv.listings",
   "dv.papo",
+  "dv.swimmerplot",
   "dv.tables",
   "dv.teal"
 )
