@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -31,14 +31,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8c26e6a75fdd27934eabf68e863fd739.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-6bbc96cfe3c0635ff424c65ccdefec9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -154,7 +155,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#roc-by-dv.explorer.parameter" id="toc-roc-by-dv.explorer.parameter" class="nav-link" data-scroll-target="#roc-by-dv.explorer.parameter">ROC by {dv.explorer.parameter}</a></li>
   <li><a href="#scatter-plot-by-dv.explorer.parameter" id="toc-scatter-plot-by-dv.explorer.parameter" class="nav-link" data-scroll-target="#scatter-plot-by-dv.explorer.parameter">Scatter plot by {dv.explorer.parameter}</a></li>
   <li><a href="#scatter-plot-matrix-by-dv.explorer.parameter" id="toc-scatter-plot-matrix-by-dv.explorer.parameter" class="nav-link" data-scroll-target="#scatter-plot-matrix-by-dv.explorer.parameter">Scatter plot matrix by {dv.explorer.parameter}</a></li>
+  <li><a href="#spider-plot-by-dv.spiderplot" id="toc-spider-plot-by-dv.spiderplot" class="nav-link" data-scroll-target="#spider-plot-by-dv.spiderplot">Spider plot by {dv.spiderplot}</a></li>
   <li><a href="#swimmerplot-by-dv.swimmerplot" id="toc-swimmerplot-by-dv.swimmerplot" class="nav-link" data-scroll-target="#swimmerplot-by-dv.swimmerplot">Swimmerplot by {dv.swimmerplot}</a></li>
+  <li><a href="#tplyr-table-by-dv.tables" id="toc-tplyr-table-by-dv.tables" class="nav-link" data-scroll-target="#tplyr-table-by-dv.tables">Tplyr table by {dv.tables}</a></li>
   <li><a href="#waterfall-plus-heatmap-by-dv.explorer.parameter" id="toc-waterfall-plus-heatmap-by-dv.explorer.parameter" class="nav-link" data-scroll-target="#waterfall-plus-heatmap-by-dv.explorer.parameter">Waterfall plus heatmap by {dv.explorer.parameter}</a></li>
   </ul></li>
   <li><a href="#other-useful-packages" id="toc-other-useful-packages" class="nav-link" data-scroll-target="#other-useful-packages">Other useful packages</a>
@@ -428,7 +431,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 <section id="hierarchical-count-table-by-dv.tables" class="level3">
-<h3 class="anchored" data-anchor-id="hierarchical-count-table-by-dv.tables">Hierarchical count table by <a href="https://boehringer-ingelheim.github.io/dv.tables/" target="_blank">{dv.tables}</a></h3>
+<h3 class="anchored" data-anchor-id="hierarchical-count-table-by-dv.tables">Hierarchical count table by <a href="https://boehringer-ingelheim.github.io/dv.tables/articles/hierarchical_count_table.html" target="_blank">{dv.tables}</a></h3>
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
@@ -458,7 +461,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 <section id="line-plot-by-dv.explorer.parameter" class="level3">
-<h3 class="anchored" data-anchor-id="line-plot-by-dv.explorer.parameter">Line plot by <a href="https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/lineplot.html" target="_blank">{dv.explorer.parameter}</a></h3>
+<h3 class="anchored" data-anchor-id="line-plot-by-dv.explorer.parameter">Line plot by <a href="https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/lineplot_main_article.html" target="_blank">{dv.explorer.parameter}</a></h3>
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
@@ -648,6 +651,21 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
+<section id="spider-plot-by-dv.spiderplot" class="level3">
+<h3 class="anchored" data-anchor-id="spider-plot-by-dv.spiderplot">Spider plot by <a href="https://boehringer-ingelheim.github.io/dv.spiderplot/" target="_blank">{dv.spiderplot}</a></h3>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/modules/spiderplot/1.png" class="lightbox" data-gallery="spiderplot-gallery"><img src="images/modules/spiderplot/1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></a></p>
+</figure>
+</div>
+
+</div><div class="column" style="width:60%;">
+<p>The Spiderplot module is designed for visualizing individual patient trajectories over time in clinical trials, particularly valuable for oncology efficacy analysis. This module creates spider plots that display patient-level response data, showing changes in tumor size or other clinical measurements across multiple visits.</p>
+</div>
+</div>
+</section>
 <section id="swimmerplot-by-dv.swimmerplot" class="level3">
 <h3 class="anchored" data-anchor-id="swimmerplot-by-dv.swimmerplot">Swimmerplot by <a href="https://boehringer-ingelheim.github.io/dv.swimmerplot/" target="_blank">{dv.swimmerplot}</a></h3>
 <div class="columns">
@@ -660,6 +678,62 @@ ul.task-list li input[type="checkbox"] {
 
 </div><div class="column" style="width:60%;">
 <p>The Swimmerplot module enables users to create interactive swimmer plots for clinical trial data. Each patient is displayed as a horizontal swim lane showing their treatment timeline, with arrows indicating ongoing treatments and optional markers for clinical responses like tumor shrinkage or disease progression.</p>
+</div>
+</div>
+</section>
+<section id="tplyr-table-by-dv.tables" class="level3">
+<h3 class="anchored" data-anchor-id="tplyr-table-by-dv.tables">Tplyr table by <a href="https://boehringer-ingelheim.github.io/dv.tables/articles/Tplyr_tables.html" target="_blank">{dv.tables}</a></h3>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div id="tplyr_table-gallery" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
+    <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="5000">
+      <a href="images/modules/tplyr_table/1.png" class="lightbox" data-gallery="tplyr_table-gallery">
+        <div style="height: 200px">
+          <img src="images/modules/tplyr_table/1.png" class="d-block  mx-auto border" style="width: 80%">
+        </div>
+      </a>
+      <div class="carousel-caption d-none d-md-block">
+        <p class="fw-light"></p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <a href="images/modules/tplyr_table/2.png" class="lightbox" data-gallery="tplyr_table-gallery">
+        <div style="height: 200px">
+          <img src="images/modules/tplyr_table/2.png" class="d-block  mx-auto border" style="width: 80%">
+        </div>
+      </a>
+      <div class="carousel-caption d-none d-md-block">
+        <p class="fw-light"></p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <a href="images/modules/tplyr_table/3.png" class="lightbox" data-gallery="tplyr_table-gallery">
+        <div style="height: 200px">
+          <img src="images/modules/tplyr_table/3.png" class="d-block  mx-auto border" style="width: 80%">
+        </div>
+      </a>
+      <div class="carousel-caption d-none d-md-block">
+        <p class="fw-light"></p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#tplyr_table-gallery" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#tplyr_table-gallery" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div><div class="column" style="width:60%;">
+<p>The Tplyr table module enables interactive visualization of summary tables created with {Tplyr} within DaVinci apps. It acts as a wrapper that not only displays these tables but also provides traceability by linking each result cell back to its source listing using {dv.listings}. The module supports multiple Tplyr tables and standalone listings under one tab via a drop-down selector, making it easier for app creators to build flexible, auditable, and user-friendly clinical data review apps.</p>
 </div>
 </div>
 </section>
@@ -741,13 +815,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
