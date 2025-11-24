@@ -81,7 +81,7 @@ describe_module(
   'The eDISH module is meant to support the assessment of drug-induced liver injury by means of the (modified) evaluation of Drug-Induced Serious Hepatotoxicity plot.'
 )
 describe_module(
-  'Hierarchical count table', 'dv.tables', 'https://boehringer-ingelheim.github.io/dv.tables/', 'hierarchical_count',
+  'Hierarchical count table', 'dv.tables', 'https://boehringer-ingelheim.github.io/dv.tables/articles/hierarchical_count_table.html', 'hierarchical_count',
   'The hierarchical count table module enables the visualization of hierarchical tables, displaying event counts at each level for a clear and structured overview.'
 )
 describe_module(
@@ -89,7 +89,7 @@ describe_module(
   'The forest plot module allows examining the correlation of several parameters with a continuous variable in the form of a forest plot. Several correlation measures and groupings are available.'
 )
 describe_module(
-  'Line plot', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/lineplot.html', 'lineplot',
+  'Line plot', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/lineplot_main_article.html', 'lineplot',
   'The lineplot module allows examining the evolution of parameter values using lineplots with different levels of grouping and aggregation measures.'
 )
 describe_module(
@@ -113,8 +113,16 @@ describe_module(
   'The scatter module allows examining the correlation of several parameters using a scatterplot matrix with different levels of grouping.'
 )
 describe_module(
+  'Spider plot', 'dv.spiderplot', 'https://boehringer-ingelheim.github.io/dv.spiderplot/', 'spiderplot',
+  'The Spiderplot module is designed for visualizing individual patient trajectories over time in clinical trials, particularly valuable for oncology efficacy analysis. This module creates spider plots that display patient-level response data, showing changes in tumor size or other clinical measurements across multiple visits.'
+)
+describe_module(
   'Swimmerplot', 'dv.swimmerplot', 'https://boehringer-ingelheim.github.io/dv.swimmerplot/', 'swimmerplot',
   'The Swimmerplot module enables users to create interactive swimmer plots for clinical trial data. Each patient is displayed as a horizontal swim lane showing their treatment timeline, with arrows indicating ongoing treatments and optional markers for clinical responses like tumor shrinkage or disease progression.'
+)
+describe_module(
+  'Tplyr table', 'dv.tables', 'https://boehringer-ingelheim.github.io/dv.tables/articles/Tplyr_tables.html', 'tplyr_table',
+  'The Tplyr table module enables interactive visualization of summary tables created with {Tplyr} within DaVinci apps. It acts as a wrapper that not only displays these tables but also provides traceability by linking each result cell back to its source listing using {dv.listings}. The module supports multiple Tplyr tables and standalone listings under one tab via a drop-down selector, making it easier for app creators to build flexible, auditable, and user-friendly clinical data review apps.'
 )
 describe_module(
   'Waterfall plus heatmap', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/wfphm.html', 'waterfall_plus_heatmap',
