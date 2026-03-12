@@ -7,17 +7,15 @@ format:
     toc: true
 ---
 
-
 ## General DaVinci packages
 
 ### Module Manager by [{dv.manager}](https://boehringer-ingelheim.github.io/dv.manager/){target="_blank"}
+
 The Module Manager is the heart of each DaVinci app. It is designed to act as container for the DaVinci modules and provide the necessary infrastructure for their operation. Additionally, {dv.manager} equips the resulting DaVinci app with various functionalities, like displaying the meta information of the data, jumping between modules, switching between different trials, or showing a custom start-up message.
 
 ### Data loader by [{dv.loader}](https://boehringer-ingelheim.github.io/dv.loader/){target="_blank"}
+
 Besides the Module Manager, DaVinci provides another handy utility package called {dv.loader}. It facilitates data loading from either a local or remote source, such as a network file storage folder. Once the requested data is loaded, it can be passed through customized preprocessing routines and transferred to the Module Manager for display in the DaVinci app.
-
-
-
 
 ```{r results='asis'}
 source("carousel/carousel.R")
@@ -59,78 +57,83 @@ describe_module <- function(name, package_name, url, image_folder, description) 
 ```
 
 ## DaVinci modules
-```{r, results='asis'} 
+
+```{r, results='asis'}
 describe_module(
   'Bookmark manager', 'dv.bookman', 'https://boehringer-ingelheim.github.io/dv.bookman/', 'bookmark_manager',
-  'This module lists all server-side bookmarks of a shiny application, allows to describe them and feature the most relevant ones.'
+  'This module lists all server-side bookmarks of a shiny application, allows to describe them and feature the most relevant ones.<br><strong>Use case</strong>: Any'
 )
 describe_module(
   'Boxplot', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/boxplot.html', 'boxplot',
-  'The boxplot module allows visualizing parameter data from ADaM basic data structure as boxplots. Data can be displayed with different levels of grouping, listings with single subject data and the possibility of examining patient details other modules (e.g. Patient Profile). It also includes some statistical testing comparing the distribution of different groups.'
+  'The boxplot module allows visualizing parameter data from ADaM basic data structure as boxplots and violin plots. Data can be displayed with different levels of grouping, listings with single subject data and the possibility of examining patient details other modules (e.g. Patient Profile). It also includes some statistical testing comparing the distribution of different groups.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration'
 )
 describe_module(
   'Clinical timelines', 'dv.clinlines', 'https://boehringer-ingelheim.github.io/dv.clinlines/', 'clinical_timelines',
-  'The Clinical Timelines module allows to display subject level data over time to present dates and/or time intervals of trial events, like adverse events, concomitant medications, randomization dates, and more.'
+  'The Clinical Timelines module displays subject level data over time to present dates and/or time intervals of trial events, like adverse events, concomitant medications, randomization dates, and more.<br><strong>Use case</strong>: Quality Monitoring, Safety Review'
 )
 describe_module(
   'Correlation heatmap', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/correlation_heatmap.html', 'correlation_heatmap',
-  'The correlation heatmap module allows examining the correlation of several parameters using a correlation heatmap with different statistical measures.'
+  'The correlation heatmap module allows examining the correlation of several parameters using a correlation heatmap with different statistical measures.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration'
 )
 describe_module(
   'eDISH', 'dv.edish', 'https://boehringer-ingelheim.github.io/dv.edish/', 'edish',
-  'The eDISH module is meant to support the assessment of drug-induced liver injury by means of the (modified) evaluation of Drug-Induced Serious Hepatotoxicity plot.'
+  'The eDISH module aims to support the assessment of drug-induced liver injury by means of the (modified) evaluation of Drug-Induced Serious Hepatotoxicity plot.<br><strong>Use case</strong>: Quality Monitoring, Safety Review'
 )
 describe_module(
   'Hierarchical count table', 'dv.tables', 'https://boehringer-ingelheim.github.io/dv.tables/articles/hierarchical_count_table.html', 'hierarchical_count',
-  'The hierarchical count table module enables the visualization of hierarchical tables, displaying event counts at each level for a clear and structured overview.'
+  'The hierarchical count table module enables the visualization of hierarchical tables, displaying event counts at each level for a clear and structured overview.<br><strong>Use case</strong>: Safety Review'
 )
 describe_module(
   'Forest plot', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/forest.html', 'forestplot',
-  'The forest plot module allows examining the correlation of several parameters with a continuous variable in the form of a forest plot. Several correlation measures and groupings are available.'
+  'The forest plot module allows examining the correlation of several parameters with a continuous variable in the form of a forest plot. Several correlation measures and groupings are available.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration'
 )
 describe_module(
   'Line plot', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/lineplot_main_article.html', 'lineplot',
-  'The lineplot module allows examining the evolution of parameter values using lineplots with different levels of grouping and aggregation measures.'
+  'The lineplot module allows examining the evolution of parameter values along different visits, using lineplots with different levels of grouping and aggregation measures.<br><strong>Use case</strong>: Safety Review, Biomarker Analysis, Parameter Exploration<br><strong>Key contact</strong>: Miguel Lechon <a href="mailto:miguel.lechon.ext@boehringer-ingelheim.com" title="Email Miguel Lechon" style="color:#007cba; text-decoration:none;">✉</a>'
 )
 describe_module(
   'Listings', 'dv.listings', 'https://boehringer-ingelheim.github.io/dv.listings/', 'listings',
-  'The listings module displays arbitrary datasets as listings. Users can select the dataset to be shown, and specify which columns of the dataset should be displayed as well as their order. The displayed columns can be sorted and filtered. Moreover, the table can be filtered to show only entries containing a keyword entered by the user. The module is not limited to usage of one data source, most notably, it can handle data from ADaM or SDTM.'
+  'The listings module displays arbitrary datasets as listings. Users can select the dataset to be shown, and specify which columns of the dataset should be displayed as well as their order. The displayed columns can be sorted and filtered. Moreover, the table can be filtered to show only entries containing a keyword entered by the user. The module is not limited to usage of one data source, most notably, it can handle data from ADaM or SDTM.<br><strong>Use case</strong>: Quality Monitoring, Safety Review'
 )
 describe_module(
   'Patient profile', 'dv.papo', 'https://boehringer-ingelheim.github.io/dv.papo/', 'patient_profile',
-  'The Patient Profile module allows to display subject level information and subject related data listings as well as plots for adverse events, concomitant medications, lab values, and vital signs over time.'
+  'The Patient Profile module displays subject-level information structured into three sections:<ul style="margin:2px 0; padding-left:18px;">
+<li><strong>Patient Information</strong>: Overview of general subject details (gender, age) customizable by App Creator</li>
+<li><strong>Data Listings</strong>: Tabular subject data (adverse events, concomitant medications, vital signs)</li>
+<li><strong>Graphical Display</strong>: Plots of adverse events, lab values, and vital signs over time</li></ul><strong>Use case</strong>: Quality Monitoring, Safety Review'
 )
 describe_module(
   'ROC', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/roc.html', 'roc',
-  'The ROC module makes it possible to visualize a set of ROC related charts, or tables, and compare independent ROC curves for different continuous parameters with respect to a single binary endpoint. This allows a user to evaluate how predictive is a continuous parameter of binary endpoint.'
+  'The ROC module makes it possible to visualize a set of ROC related charts, or tables, and compare independent ROC curves for different continuous parameters with respect to a single binary endpoint. This allows a user to evaluate how predictive is a continuous parameter of binary endpoint.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration'
 )
 describe_module(
   'Scatter plot', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/scatterplot.html', 'scatterplot',
-  'The scatterplot module makes it possible to visualize a scatterplot of two biomarkers with different levels of grouping.'
+  'The scatterplot module visualizes relationships between two biomarkers using scatterplots with multiple grouping levels and correlation measures.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration'
 )
 describe_module(
   'Scatter plot matrix', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/scatterplotmatrix.html', 'scatterplot_matrix',
-  'The scatter module allows examining the correlation of several parameters using a scatterplot matrix with different levels of grouping.'
+  'The scatter module allows examining the correlation of several parameters using a scatterplot matrix with different levels of grouping.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration'
 )
 describe_module(
   'Spider plot', 'dv.spiderplot', 'https://boehringer-ingelheim.github.io/dv.spiderplot/', 'spiderplot',
-  'The Spiderplot module is designed for visualizing individual patient trajectories over time in clinical trials, particularly valuable for oncology efficacy analysis. This module creates spider plots that display patient-level response data, showing changes in tumor size or other clinical measurements across multiple visits.'
+  'The Spiderplot module visualizes individual patient trajectories over time in clinical trials, particularly valuable for oncology efficacy analysis. Users can display patient-level response data as spider plots showing changes in tumor size or other clinical measurements across multiple visits, with scatter points at defined time units. Additional features include subgrouping entities by criteria on separate plots, supporting use cases like treatment efficacy comparisons and patient visit/lab indicator analyses.<br><strong>Use case</strong>: Oncology Efficacy Monitoring'
 )
 describe_module(
   'Swimmerplot', 'dv.swimmerplot', 'https://boehringer-ingelheim.github.io/dv.swimmerplot/', 'swimmerplot',
-  'The Swimmerplot module enables users to create interactive swimmer plots for clinical trial data. Each patient is displayed as a horizontal swim lane showing their treatment timeline, with arrows indicating ongoing treatments and optional markers for clinical responses like tumor shrinkage or disease progression.'
+  'The Swimmerplot module enables users to create interactive swimmer plots for clinical trial data. Each patient is displayed as a horizontal swim lane showing their treatment timeline, with arrows indicating ongoing treatments and optional markers for clinical responses like tumor shrinkage or disease progression. Patients can be grouped and sorted by characteristics such as demographics or treatment type, with interactive features including hover tooltips and clickable navigation to detailed patient views.<br><strong>Use case</strong>: Oncology Efficacy Monitoring'
 )
 describe_module(
   'Tplyr table', 'dv.tables', 'https://boehringer-ingelheim.github.io/dv.tables/articles/Tplyr_tables.html', 'tplyr_table',
-  'The Tplyr table module enables interactive visualization of summary tables created with {Tplyr} within DaVinci apps. It acts as a wrapper that not only displays these tables but also provides traceability by linking each result cell back to its source listing using {dv.listings}. The module supports multiple Tplyr tables and standalone listings under one tab via a drop-down selector, making it easier for app creators to build flexible, auditable, and user-friendly clinical data review apps.'
+  'The Tplyr table module enables interactive visualization of summary tables created with {Tplyr} within DaVinci apps. It acts as a wrapper that not only displays these tables but also provides traceability by linking each result cell back to its source listing using {dv.listings}. The module supports multiple Tplyr tables and standalone listings under one tab via a drop-down selector, making it easier for app creators to build flexible, auditable, and user-friendly clinical data review apps.<br><strong>Use case</strong>: Quality Monitoring'
 )
 describe_module(
   'Waterfall plus heatmap', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/wfphm.html', 'waterfall_plus_heatmap',
-  'The Waterfall plus heatmap module package includes a waterfall plot and aligned categorical continuous and parameter heatmaps.'
+  'The Waterfall plus heatmap module package includes a waterfall plot and aligned categorical continuous and parameter heatmaps.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration'
 )
 ```
+
 ## Other useful packages
 
 ### DaVinci's Teal wrapper package [{dv.teal}](https://boehringer-ingelheim.github.io/dv.teal/){target="_blank"}
-The dv.teal package provides a wrapper function to include Teal modules within the DaVinci framework.
 
+The dv.teal package provides a wrapper function to include Teal modules within the DaVinci framework.
