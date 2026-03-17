@@ -89,7 +89,7 @@ describe_module(
 )
 describe_module(
   'Line plot', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/lineplot_main_article.html', 'lineplot',
-  'The lineplot module allows examining the evolution of parameter values along different visits, using lineplots with different levels of grouping and aggregation measures.<br><strong>Use case</strong>: Safety Review, Biomarker Analysis, Parameter Exploration<br><strong>Key contact</strong>: Miguel Lechon <a href="mailto:miguel.lechon.ext@boehringer-ingelheim.com" title="Email Miguel Lechon" style="color:#007cba; text-decoration:none;">✉</a>'
+  'The lineplot module allows examining the evolution of parameter values along different visits, using lineplots with different levels of grouping and aggregation measures.<br><strong>Use case</strong>: Safety Review, Biomarker Analysis, Parameter Exploration'
 )
 describe_module(
   'Listings', 'dv.listings', 'https://boehringer-ingelheim.github.io/dv.listings/', 'listings',
