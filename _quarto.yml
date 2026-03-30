@@ -7,6 +7,7 @@ website:
     pinned: true
     collapse: true
     search: true
+    logo: davinci_icon.svg
     left:
       - quarto/getting_started.qmd
       - quarto/modules.qmd

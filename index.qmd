@@ -2,7 +2,6 @@
 title: "DaVinci - Dynamic Visualization for Clinical Insights"
 ---
 
-
 ### What is DaVinci?
 
 DaVinci provides tools to review, aggregate and visualize data to develop and deliver safe and effective treatments for patients. Instead of creating entire R/Shiny applications, DaVinci provides individual modules. Modules are functional building blocks that can be linked together into customized apps. This customization enables App Creators to build their own app according to trial-specific needs without deep R knowledge. The concept of developing loosely coupled, functional units and composing them into a larger application is subsequently referred to as modular approach.
@@ -13,21 +12,39 @@ To create an app, you need to first identify which modules to include. Consider 
 
 ![](quarto/images/building_blocks.png){fig-align="center"}
 
-
-DaVinci modules are provided as R packages, with each package containing one or multiple modules. Choose the modules freely according to the purpose of your visualization. For instance, while a heatmap may not be necessary for data cleaning, it could be useful for biomarker analyses. Safety review might benefit from an eDISH plot, and listings are likely to be needed in all use cases. These are only examples, modules can be combined as needed. Some modules even have the capability to interact with each other. 
-
+DaVinci modules are provided as R packages, with each package containing one or multiple modules. Choose the modules freely according to the purpose of your visualization. For instance, while a heatmap may not be necessary for data cleaning, it could be useful for biomarker analyses. Safety review might benefit from an eDISH plot, and listings are likely to be needed in all use cases. These are only examples, modules can be combined as needed. Some modules even have the capability to interact with each other.
 
 ```{=html}
 <div><button onclick="window.location.href = 'quarto/getting_started.html';" class="button">Getting Started</button> explains what requriments need to be met and how to actual create an app.</div>
 <div><button onclick="window.location.href = 'quarto/modules.html';" class="button">DaVinci Modules</button> shows a complete list of all DaVinci modules.</div>
 ```
 
-
 <br>
+
+### DaVinci demo app walkthrough
+
+This short video demonstrates how DaVinci modules come together in a real clinical data review app. It is included here to give new users a quick, visual overview of the workflow and the type of interactive insights DaVinci enables.
+
 <div>
+
 <video width="100%" height="auto" controls allowfullscreen >
-  <source src="quarto/images/short_video.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+
+<source src="quarto/images/short_video.mp4" type="video/mp4">
+
+Your browser does not support the video tag. </video>
+
 </div>
 
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
