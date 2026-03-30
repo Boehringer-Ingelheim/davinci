@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Module Gallery – DaVinci</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -31,15 +34,14 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6bbc96cfe3c0635ff424c65ccdefec9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-943dae335387ebfea3b8a2f856d26e13.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -82,6 +84,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../davinci_icon.svg" alt="" class="navbar-logo light-content">
+    <img src="../davinci_icon.svg" alt="" class="navbar-logo dark-content">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">DaVinci</span>
     </a>
@@ -162,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#other-useful-packages" id="toc-other-useful-packages" class="nav-link" data-scroll-target="#other-useful-packages">Other useful packages</a>
   <ul class="collapse">
-  <li><a href="#davincis-teal-wrapper-package-dv.teal" id="toc-davincis-teal-wrapper-package-dv.teal" class="nav-link" data-scroll-target="#davincis-teal-wrapper-package-dv.teal">DaVinci’s Teal wrapper package {dv.teal}</a></li>
+  <li><a href="#davincis-teal-wrapper-package-by-dv.teal" id="toc-davincis-teal-wrapper-package-by-dv.teal" class="nav-link" data-scroll-target="#davincis-teal-wrapper-package-by-dv.teal">DaVinci’s Teal wrapper package by {dv.teal}</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -193,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="general-davinci-packages">General DaVinci packages</h2>
 <section id="module-manager-by-dv.manager" class="level3">
 <h3 class="anchored" data-anchor-id="module-manager-by-dv.manager">Module Manager by <a href="https://boehringer-ingelheim.github.io/dv.manager/" target="_blank">{dv.manager}</a></h3>
-<p>The Module Manager is the heart of each DaVinci app. It is designed to act as container for the DaVinci modules and provide the necessary infrastructure for their operation. Additionally, {dv.manager} equips the resulting DaVinci app with various functionalities, like displaying the meta information of the data, jumping between modules, switching between different trials, or showing a custom start-up message.</p>
+<p>The Module Manager is the heart of each DaVinci app. It is designed to act as container for the DaVinci modules and provide the necessary infrastructure for their operation. Additionally, {dv.manager} equips the resulting DaVinci app with various functionalities, like displaying the meta information of the data, jumping between modules, switching between different trials, showing a custom start-up message, and managing global filtering across modules, so that users can define filters once and have them applied consistently to all visualizations in the app.</p>
 </section>
 <section id="data-loader-by-dv.loader" class="level3">
 <h3 class="anchored" data-anchor-id="data-loader-by-dv.loader">Data loader by <a href="https://boehringer-ingelheim.github.io/dv.loader/" target="_blank">{dv.loader}</a></h3>
@@ -243,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
   </button>
 </div>
 </div><div class="column" style="width:60%;">
-<p>This module lists all server-side bookmarks of a shiny application, allows to describe them and feature the most relevant ones.</p>
+<p>This module lists all server-side bookmarks of a shiny application, allows to describe them and feature the most relevant ones.<br><strong>Use case</strong>: Any</p>
 </div>
 </div>
 </section>
@@ -257,12 +263,23 @@ ul.task-list li input[type="checkbox"] {
     <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="5000">
       <a href="images/modules/boxplot/1.png" class="lightbox" data-gallery="boxplot-gallery">
         <div style="height: 200px">
           <img src="images/modules/boxplot/1.png" class="d-block  mx-auto border" style="width: 80%">
+        </div>
+      </a>
+      <div class="carousel-caption d-none d-md-block">
+        <p class="fw-light"></p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <a href="images/modules/boxplot/1b.png" class="lightbox" data-gallery="boxplot-gallery">
+        <div style="height: 200px">
+          <img src="images/modules/boxplot/1b.png" class="d-block  mx-auto border" style="width: 80%">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -310,7 +327,7 @@ ul.task-list li input[type="checkbox"] {
   </button>
 </div>
 </div><div class="column" style="width:60%;">
-<p>The boxplot module allows visualizing parameter data from ADaM basic data structure as boxplots. Data can be displayed with different levels of grouping, listings with single subject data and the possibility of examining patient details other modules (e.g.&nbsp;Patient Profile). It also includes some statistical testing comparing the distribution of different groups.</p>
+<p>The boxplot module allows visualizing parameter data from ADaM basic data structure as boxplots and violin plots. Data can be displayed with different levels of grouping, with listings of single-subject data. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo. It also includes statistical testing to compare the distribution of different groups.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
 </div>
 </div>
 </section>
@@ -366,7 +383,7 @@ ul.task-list li input[type="checkbox"] {
   </button>
 </div>
 </div><div class="column" style="width:60%;">
-<p>The Clinical Timelines module allows to display subject level data over time to present dates and/or time intervals of trial events, like adverse events, concomitant medications, randomization dates, and more.</p>
+<p>The Clinical Timelines module displays subject level data over time to present dates and/or time intervals of trial events, like adverse events, concomitant medications, randomization dates, and more. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.<br><strong>Use case</strong>: Quality Monitoring, Safety Review</p>
 </div>
 </div>
 </section>
@@ -381,7 +398,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 </div><div class="column" style="width:60%;">
-<p>The correlation heatmap module allows examining the correlation of several parameters using a correlation heatmap with different statistical measures.</p>
+<p>The correlation heatmap module allows examining the correlation of several parameters using a correlation heatmap with different statistical measures.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
 </div>
 </div>
 </section>
@@ -426,7 +443,7 @@ ul.task-list li input[type="checkbox"] {
   </button>
 </div>
 </div><div class="column" style="width:60%;">
-<p>The eDISH module is meant to support the assessment of drug-induced liver injury by means of the (modified) evaluation of Drug-Induced Serious Hepatotoxicity plot.</p>
+<p>The eDISH module aims to support the assessment of drug-induced liver injury by means of the (modified) evaluation of Drug-Induced Serious Hepatotoxicity plot. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.<br><strong>Use case</strong>: Quality Monitoring, Safety Review</p>
 </div>
 </div>
 </section>
@@ -441,7 +458,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 </div><div class="column" style="width:60%;">
-<p>The hierarchical count table module enables the visualization of hierarchical tables, displaying event counts at each level for a clear and structured overview.</p>
+<p>The hierarchical count table module enables the visualization of hierarchical tables, displaying event counts at each level for a clear and structured overview. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.<br><strong>Use case</strong>: Quality Monitoring, Safety Review</p>
 </div>
 </div>
 </section>
@@ -456,7 +473,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 </div><div class="column" style="width:60%;">
-<p>The forest plot module allows examining the correlation of several parameters with a continuous variable in the form of a forest plot. Several correlation measures and groupings are available.</p>
+<p>The forest plot module allows examining the correlation of several parameters with a continuous variable in the form of a forest plot. Several correlation measures and groupings are available.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
 </div>
 </div>
 </section>
@@ -471,7 +488,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 </div><div class="column" style="width:60%;">
-<p>The lineplot module allows examining the evolution of parameter values using lineplots with different levels of grouping and aggregation measures.</p>
+<p>The lineplot module allows examining the evolution of parameter values along different visits, using lineplots with different levels of grouping and aggregation measures. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.<br><strong>Use case</strong>: Safety Review, Biomarker Analysis, Parameter Exploration</p>
 </div>
 </div>
 </section>
@@ -527,7 +544,7 @@ ul.task-list li input[type="checkbox"] {
   </button>
 </div>
 </div><div class="column" style="width:60%;">
-<p>The listings module displays arbitrary datasets as listings. Users can select the dataset to be shown, and specify which columns of the dataset should be displayed as well as their order. The displayed columns can be sorted and filtered. Moreover, the table can be filtered to show only entries containing a keyword entered by the user. The module is not limited to usage of one data source, most notably, it can handle data from ADaM or SDTM.</p>
+<p>The listings module displays arbitrary datasets as listings. Users can select the dataset to be shown, and specify which columns of the dataset should be displayed as well as their order. The displayed columns can be sorted and filtered. Moreover, the table can be filtered to show only entries containing a keyword entered by the user. The module is not limited to usage of one data source, most notably, it can handle data from ADaM or SDTM. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.<br><strong>Use case</strong>: Quality Monitoring, Safety Review</p>
 </div>
 </div>
 </section>
@@ -572,7 +589,19 @@ ul.task-list li input[type="checkbox"] {
   </button>
 </div>
 </div><div class="column" style="width:60%;">
-<p>The Patient Profile module allows to display subject level information and subject related data listings as well as plots for adverse events, concomitant medications, lab values, and vital signs over time.</p>
+The Patient Profile module displays subject-level information structured into three sections:
+<ul style="margin:2px 0; padding-left:18px;">
+<li>
+<strong>Patient Information</strong>: Overview of general subject details (gender, age) customizable by App Creator
+</li>
+<li>
+<strong>Data Listings</strong>: Tabular subject data (adverse events, concomitant medications, vital signs)
+</li>
+<li>
+<strong>Graphical Display</strong>: Plots of adverse events, lab values, and vital signs over time
+</li>
+</ul>
+<p>It can be reached via drill-through navigation from several other modules, enabling direct access to the corresponding patient profile.<br><strong>Use case</strong>: Quality Monitoring, Safety Review</p>
 </div>
 </div>
 </section>
@@ -587,7 +616,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 </div><div class="column" style="width:60%;">
-<p>The ROC module makes it possible to visualize a set of ROC related charts, or tables, and compare independent ROC curves for different continuous parameters with respect to a single binary endpoint. This allows a user to evaluate how predictive is a continuous parameter of binary endpoint.</p>
+<p>The ROC module makes it possible to visualize a set of ROC related charts, or tables, and compare independent ROC curves for different continuous parameters with respect to a single binary endpoint. This allows a user to evaluate how predictive is a continuous parameter of binary endpoint.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
 </div>
 </div>
 </section>
@@ -632,7 +661,7 @@ ul.task-list li input[type="checkbox"] {
   </button>
 </div>
 </div><div class="column" style="width:60%;">
-<p>The scatterplot module makes it possible to visualize a scatterplot of two biomarkers with different levels of grouping.</p>
+<p>The scatterplot module visualizes relationships between two biomarkers using scatterplots with multiple grouping levels and correlation measures.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
 </div>
 </div>
 </section>
@@ -647,7 +676,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 </div><div class="column" style="width:60%;">
-<p>The scatter module allows examining the correlation of several parameters using a scatterplot matrix with different levels of grouping.</p>
+<p>The scatter module allows examining the correlation of several parameters using a scatterplot matrix with different levels of grouping.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
 </div>
 </div>
 </section>
@@ -662,7 +691,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 </div><div class="column" style="width:60%;">
-<p>The Spiderplot module is designed for visualizing individual patient trajectories over time in clinical trials, particularly valuable for oncology efficacy analysis. This module creates spider plots that display patient-level response data, showing changes in tumor size or other clinical measurements across multiple visits.</p>
+<p>The Spiderplot module visualizes individual patient trajectories over time in clinical trials, particularly valuable for oncology efficacy analysis. Users can display patient-level response data as spider plots showing changes in tumor size or other clinical measurements across multiple visits, with scatter points at defined time units. Additional features include subgrouping entities by criteria on separate plots, supporting use cases like treatment efficacy comparisons and patient visit/lab indicator analyses. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.<br><strong>Use case</strong>: Oncology Efficacy Monitoring</p>
 </div>
 </div>
 </section>
@@ -677,7 +706,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 </div><div class="column" style="width:60%;">
-<p>The Swimmerplot module enables users to create interactive swimmer plots for clinical trial data. Each patient is displayed as a horizontal swim lane showing their treatment timeline, with arrows indicating ongoing treatments and optional markers for clinical responses like tumor shrinkage or disease progression.</p>
+<p>The Swimmerplot module enables users to create interactive swimmer plots for clinical trial data. Each patient is displayed as a horizontal swim lane showing their treatment timeline, with arrows indicating ongoing treatments and optional markers for clinical responses like tumor shrinkage or disease progression. Patients can be grouped and sorted by characteristics such as demographics or treatment type, with interactive features including hover tooltips and clickable navigation to detailed patient views.<br><strong>Use case</strong>: Oncology Efficacy Monitoring</p>
 </div>
 </div>
 </section>
@@ -689,7 +718,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
     <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="5000">
@@ -712,16 +740,6 @@ ul.task-list li input[type="checkbox"] {
         <p class="fw-light"></p>
       </div>
     </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <a href="images/modules/tplyr_table/3.png" class="lightbox" data-gallery="tplyr_table-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/tplyr_table/3.png" class="d-block  mx-auto border" style="width: 80%">
-        </div>
-      </a>
-      <div class="carousel-caption d-none d-md-block">
-        <p class="fw-light"></p>
-      </div>
-    </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#tplyr_table-gallery" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -733,7 +751,7 @@ ul.task-list li input[type="checkbox"] {
   </button>
 </div>
 </div><div class="column" style="width:60%;">
-<p>The Tplyr table module enables interactive visualization of summary tables created with {Tplyr} within DaVinci apps. It acts as a wrapper that not only displays these tables but also provides traceability by linking each result cell back to its source listing using {dv.listings}. The module supports multiple Tplyr tables and standalone listings under one tab via a drop-down selector, making it easier for app creators to build flexible, auditable, and user-friendly clinical data review apps.</p>
+<p>The Tplyr table module enables interactive visualization of summary tables created with {Tplyr} within DaVinci apps. It acts as a wrapper that not only displays these tables but also provides traceability by linking each result cell back to its source listing using {dv.listings}. The module supports multiple Tplyr tables and standalone listings under one tab via a drop-down selector, making it easier for app creators to build flexible, auditable, and user-friendly clinical data review apps.<br><strong>Use case</strong>: Quality Monitoring</p>
 </div>
 </div>
 </section>
@@ -748,16 +766,57 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 </div><div class="column" style="width:60%;">
-<p>The Waterfall plus heatmap module package includes a waterfall plot and aligned categorical continuous and parameter heatmaps.</p>
+<p>The Waterfall plus heatmap module package includes a waterfall plot and aligned categorical continuous and parameter heatmaps.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
 </div>
 </div>
 </section>
 </section>
 <section id="other-useful-packages" class="level2">
 <h2 class="anchored" data-anchor-id="other-useful-packages">Other useful packages</h2>
-<section id="davincis-teal-wrapper-package-dv.teal" class="level3">
-<h3 class="anchored" data-anchor-id="davincis-teal-wrapper-package-dv.teal">DaVinci’s Teal wrapper package <a href="https://boehringer-ingelheim.github.io/dv.teal/" target="_blank">{dv.teal}</a></h3>
-<p>The dv.teal package provides a wrapper function to include Teal modules within the DaVinci framework.</p>
+<section id="davincis-teal-wrapper-package-by-dv.teal" class="level3">
+<h3 class="anchored" data-anchor-id="davincis-teal-wrapper-package-by-dv.teal">DaVinci’s Teal wrapper package by <a href="https://boehringer-ingelheim.github.io/dv.teal/" target="_blank">{dv.teal}</a></h3>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div id="teal-gallery" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
+    <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="5000">
+      <a href="images/modules/teal/1.png" class="lightbox" data-gallery="teal-gallery">
+        <div style="height: 200px">
+          <img src="images/modules/teal/1.png" class="d-block  mx-auto border" style="width: 80%">
+        </div>
+      </a>
+      <div class="carousel-caption d-none d-md-block">
+        <p class="fw-light"></p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <a href="images/modules/teal/2.png" class="lightbox" data-gallery="teal-gallery">
+        <div style="height: 200px">
+          <img src="images/modules/teal/2.png" class="d-block  mx-auto border" style="width: 80%">
+        </div>
+      </a>
+      <div class="carousel-caption d-none d-md-block">
+        <p class="fw-light"></p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#teal-gallery" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#teal-gallery" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div><div class="column" style="width:60%;">
+<p>The dv.teal package provides a wrapper function to include Teal modules within the DaVinci framework.<br><strong>Use case</strong>: Any</p>
+</div>
+</div>
 
 
 </section>
