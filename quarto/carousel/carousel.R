@@ -24,6 +24,8 @@ carousel <- function(id, duration, items) {
       lapply(items, function(item) item$button)
     )
   )
+
+
   items <- div(
     class = "carousel-inner",
     tagList(
@@ -35,9 +37,7 @@ carousel <- function(id, duration, items) {
     class="carousel carousel-dark slide",
     `data-bs-ride`="carousel",
     indicators,
-    items,
-    navButton(id, "prev", "Previous"),
-    navButton(id, "next", "Next")
+    items
   )
 }
 
@@ -78,8 +78,7 @@ carouselItem <- function(
     class = "lightbox",
     `data-gallery` = gallery_id,
     div(
-      img(src = image, class = "d-block  mx-auto border", style = "width: 80%"),
-      style = "height: 200px"
+      img(src = image, class = "d-block  mx-auto")
       ),
     ),
     div(

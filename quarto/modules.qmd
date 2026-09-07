@@ -5,17 +5,8 @@ execute:
 format:
   html:
     toc: true
+    css: styles.css
 ---
-
-## General DaVinci packages
-
-### Module Manager by [{dv.manager}](https://boehringer-ingelheim.github.io/dv.manager/){target="_blank"}
-
-The Module Manager is the heart of each DaVinci app. It is designed to act as container for the DaVinci modules and provide the necessary infrastructure for their operation. Additionally, {dv.manager} equips the resulting DaVinci app with various functionalities, like displaying the meta information of the data, jumping between modules, switching between different trials, showing a custom start-up message, and managing global filtering across modules, so that users can define filters once and have them applied consistently to all visualizations in the app.
-
-### Data loader by [{dv.loader}](https://boehringer-ingelheim.github.io/dv.loader/){target="_blank"}
-
-Besides the Module Manager, DaVinci provides another handy utility package called {dv.loader}. It facilitates data loading from either a local or remote source, such as a network file storage folder. Once the requested data is loaded, it can be passed through customized preprocessing routines and transferred to the Module Manager for display in the DaVinci app.
 
 ```{r results='asis'}
 source("carousel/carousel.R")
@@ -25,118 +16,400 @@ include_images <- function(module_name) {
 
   gallery_id <- paste0(module_name, "-gallery")
 
+  
   if(length(paths) == 1){
-    cat(paste0("![](", paths, "){width=80% fig-align='center' .lightbox group='", gallery_id, "'}"))
+    cat(paste0("![](", paths, "){.card-single-img .lightbox group='", gallery_id, "'}"))
   } else {
     desc <- list()
     for (path in paths) desc[[length(desc)+1]] <- list(image = path, link = path)
-    carousel(gallery_id, 5000, desc)
+   carousel(gallery_id, 5000, desc)
   }
 }
+```
 
-module_template_description_pre <- r"----(  
-### %s by [{%s}](%s){target='_blank'} 
-  
-::: columns
-::: {.column width="40%%"}
-)----"
+```{r results='asis'}
 
-module_template_description_post <- r"----(  
-:::
-::: {.column width="60%%"}
+textmodule_template <- r"----(
+<div class="textmodule">
+<div class="header">
+<div class="heading">
+<strong>%s</strong>
+</div>
+<div class="subheading">
+by [{%s}](%s){target='_blank'}
+</div>
+</div>
+<div class="textcard">
 %s
-:::
-:::
+</div>
+</div>
 )----"
 
-describe_module <- function(name, package_name, url, image_folder, description) {
-  cat(sprintf(module_template_description_pre, name, package_name, url))
-  cat(knitr::raw_html(toString((include_images(image_folder)))))
-  cat(sprintf(module_template_description_post, description))
+build_textmodule <- function(name, package_name, url, description) {
+  cat(sprintf(textmodule_template, name, package_name, url, description))
 }
+
+```
+
+```{r results='asis'}
+
+module_template_pre <- r"----(
+<div class="module" data-usecase="%s">
+<div class="header">
+<div class="heading">
+<strong>%s</strong>
+</div>
+<div class="subheading">
+by [{%s}](%s){target='_blank'}
+</div>
+</div>
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
+)----"
+
+module_template_post <- r"----(
+<div class="usecase">
+<strong>Use case</strong>: %s
+</div>
+</div>
+<div class="card-back">
+%s
+</div>
+</div>
+</div>
+</div>
+)----"
+
+build_module <- function(usecase, name, package_name, url, image_folder, description) {
+  cat(sprintf(module_template_pre, usecase, name, package_name, url))
+  cat(knitr::raw_html(toString((include_images(image_folder)))))
+  cat(sprintf(module_template_post, usecase, description))
+}
+
+
+```
+
+## General DaVinci packages
+
+```{r results='asis'}
+
+cat('<div class="generalgrid">')
+
+build_textmodule(
+  'Module Manager',
+  'dv.manager',
+  'https://boehringer-ingelheim.github.io/dv.manager/',
+  'The Module Manager is the heart of each DaVinci app. It acts as a container for the DaVinci modules and provides the necessary infrastructure for their operation. Additionally, {dv.manager} equips the resulting DaVinci app with various functionalities, like jumping between modules, switching between different trials and managing global filtering across modules.'
+)
+
+build_textmodule(
+  'Data loader',
+  'dv.loader',
+  'https://boehringer-ingelheim.github.io/dv.loader/',
+  'DaVinci provides another handy utility package called {dv.loader}. It facilitates data loading from either a local or remote source, such as a network file storage folder. Once the requested data is loaded, it can be passed through customized preprocessing routines and transferred to the Module Manager for display in the DaVinci app.'
+)
+
+cat('</div>')
+
 ```
 
 ## DaVinci modules
 
-```{r, results='asis'}
-describe_module(
-  'Bookmark manager', 'dv.bookman', 'https://boehringer-ingelheim.github.io/dv.bookman/', 'bookmark_manager',
-  'This module lists all server-side bookmarks of a shiny application, allows to describe them and feature the most relevant ones.<br><strong>Use case</strong>: Any'
+```{=html}
+
+<h4>Select use case:</h4>
+<div class="filter">
+</div>
+```
+
+```{r results='asis'}
+
+cat('<div class="modulegrid">')
+
+build_module(
+  'Any',
+  'Bookmark manager', 
+  'dv.bookman',
+  'https://boehringer-ingelheim.github.io/dv.bookman/',
+  'bookmark_manager',
+  'This module lists all server-side bookmarks of a shiny application, allows to describe them and feature the most relevant ones.'
 )
-describe_module(
-  'Boxplot', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/boxplot.html', 'boxplot',
-  'The boxplot module allows visualizing parameter data from ADaM basic data structure as boxplots and violin plots. Data can be displayed with different levels of grouping, with listings of single-subject data. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo. It also includes statistical testing to compare the distribution of different groups.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration'
+
+build_module(
+  'Biomarker Analysis, Parameter Exploration',
+  'Boxplot',
+  'dv.explorer.parameter',
+  'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/boxplot.html',
+  'boxplot',
+  'The boxplot module allows visualizing parameter data from ADaM basic data structure as boxplots and violin plots. Data can be displayed with different levels of grouping, with listings of single-subject data. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo. It also includes statistical testing to compare the distribution of different groups.'
 )
-describe_module(
-  'Clinical timelines', 'dv.clinlines', 'https://boehringer-ingelheim.github.io/dv.clinlines/', 'clinical_timelines',
-  'The Clinical Timelines module displays subject level data over time to present dates and/or time intervals of trial events, like adverse events, concomitant medications, randomization dates, and more. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.<br><strong>Use case</strong>: Quality Monitoring, Safety Review'
+
+build_module(
+  'Quality Monitoring, Safety Review',
+  'Clinical timelines',
+  'dv.clinlines',
+  'https://boehringer-ingelheim.github.io/dv.clinlines/',
+  'clinical_timelines',
+  'The Clinical Timelines module displays subject level data over time to present dates and/or time intervals of trial events, like adverse events, concomitant medications, randomization dates, and more. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.'
 )
-describe_module(
-  'Correlation heatmap', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/correlation_heatmap.html', 'correlation_heatmap',
-  'The correlation heatmap module allows examining the correlation of several parameters using a correlation heatmap with different statistical measures.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration'
+  
+build_module(
+  'Biomarker Analysis, Parameter Exploration',
+  'Correlation heatmap', 
+  'dv.explorer.parameter',
+  'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/correlation_heatmap.html',
+  'correlation_heatmap',
+  'The correlation heatmap module allows examining the correlation of several parameters using a correlation heatmap with different statistical measures.'
 )
-describe_module(
-  'eDISH', 'dv.edish', 'https://boehringer-ingelheim.github.io/dv.edish/', 'edish',
-  'The eDISH module aims to support the assessment of drug-induced liver injury by means of the (modified) evaluation of Drug-Induced Serious Hepatotoxicity plot. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.<br><strong>Use case</strong>: Quality Monitoring, Safety Review'
+
+build_module(
+  'Quality Monitoring, Safety Review',
+  'eDISH', 'dv.edish',
+  'https://boehringer-ingelheim.github.io/dv.edish/',
+  'edish',
+  'The eDISH module aims to support the assessment of drug-induced liver injury by means of the (modified) evaluation of Drug-Induced Serious Hepatotoxicity plot. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.'
 )
-describe_module(
-  'Hierarchical count table', 'dv.tables', 'https://boehringer-ingelheim.github.io/dv.tables/articles/hierarchical_count_table.html', 'hierarchical_count',
-  'The hierarchical count table module enables the visualization of hierarchical tables, displaying event counts at each level for a clear and structured overview. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.<br><strong>Use case</strong>: Quality Monitoring, Safety Review'
+
+build_module(
+  'Quality Monitoring, Safety Review',
+  'Hierarchical count table', 'dv.tables',
+  'https://boehringer-ingelheim.github.io/dv.tables/articles/hierarchical_count_table.html',
+  'hierarchical_count',
+  'The hierarchical count table module enables the visualization of hierarchical tables, displaying event counts at each level for a clear and structured overview. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.'
 )
-describe_module(
-  'Forest plot', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/forest.html', 'forestplot',
-  'The forest plot module allows examining the correlation of several parameters with a continuous variable in the form of a forest plot. Several correlation measures and groupings are available.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration'
+
+build_module(
+  'Biomarker Analysis, Parameter Exploration',
+  'Forest plot', 
+  'dv.explorer.parameter',
+  'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/forest.html',
+  'forestplot',
+  'The forest plot module allows examining the correlation of several parameters with a continuous variable in the form of a forest plot. Several correlation measures and groupings are available.'
 )
-describe_module(
-  'Line plot', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/lineplot_main_article.html', 'lineplot',
-  'The lineplot module allows examining the evolution of parameter values along different visits, using lineplots with different levels of grouping and aggregation measures. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.<br><strong>Use case</strong>: Safety Review, Biomarker Analysis, Parameter Exploration'
+
+build_module(
+  'Safety Review, Biomarker Analysis, Parameter Exploration',
+  'Line plot', 'dv.explorer.parameter',
+  'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/lineplot_main_article.html',
+  'lineplot',
+  'The lineplot module allows examining the evolution of parameter values along different visits, using lineplots with different levels of grouping and aggregation measures. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.'
 )
-describe_module(
-  'Listings', 'dv.listings', 'https://boehringer-ingelheim.github.io/dv.listings/', 'listings',
-  'The listings module displays arbitrary datasets as listings. Users can select the dataset to be shown, and specify which columns of the dataset should be displayed as well as their order. The displayed columns can be sorted and filtered. Moreover, the table can be filtered to show only entries containing a keyword entered by the user. The module is not limited to usage of one data source, most notably, it can handle data from ADaM or SDTM. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.<br><strong>Use case</strong>: Quality Monitoring, Safety Review'
+
+build_module(
+  'Quality Monitoring, Safety Review',
+  'Listings', 'dv.listings',
+  'https://boehringer-ingelheim.github.io/dv.listings/',
+  'listings',
+  'The listings module displays arbitrary datasets as listings. Users can select the dataset to be shown, and specify which columns of the dataset should be displayed as well as their order. The displayed columns can be sorted and filtered. Moreover, the table can be filtered to show only entries containing a keyword entered by the user. The module is not limited to usage of one data source, most notably, it can handle data from ADaM or SDTM. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.'
 )
-describe_module(
-  'Patient profile', 'dv.papo', 'https://boehringer-ingelheim.github.io/dv.papo/', 'patient_profile',
-  'The Patient Profile module displays subject-level information structured into three sections:<ul style="margin:2px 0; padding-left:18px;">
-<li><strong>Patient Information</strong>: Overview of general subject details (gender, age) customizable by App Creator</li>
-<li><strong>Data Listings</strong>: Tabular subject data (adverse events, concomitant medications, vital signs)</li>
-<li><strong>Graphical Display</strong>: Plots of adverse events, lab values, and vital signs over time</li></ul>It can be reached via drill-through navigation from several other modules, enabling direct access to the corresponding patient profile.<br><strong>Use case</strong>: Quality Monitoring, Safety Review'
+
+build_module(
+  'Quality Monitoring, Safety Review',
+  'Patient profile', 'dv.papo',
+  'https://boehringer-ingelheim.github.io/dv.papo/',
+  'patient_profile',
+  'The Patient Profile module displays subject-level information structured into three sections:<ul>
+<li>Patient Information: Overview of general subject details (gender, age) customizable by App Creator</li>
+<li>Data Listings: Tabular subject data (adverse events, concomitant medications, vital signs)</li>
+<li>Graphical Display: Plots of adverse events, lab values, and vital signs over time</li></ul>
+It can be reached via drill-through navigation from several other modules, enabling direct access to the corresponding patient profile.'
 )
-describe_module(
-  'ROC', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/roc.html', 'roc',
-  'The ROC module makes it possible to visualize a set of ROC related charts, or tables, and compare independent ROC curves for different continuous parameters with respect to a single binary endpoint. This allows a user to evaluate how predictive is a continuous parameter of binary endpoint.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration'
+
+build_module(
+  'Biomarker Analysis, Parameter Exploration',
+  'ROC', 'dv.explorer.parameter',
+  'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/roc.html',
+  'roc',
+  'The ROC module makes it possible to visualize a set of ROC related charts, or tables, and compare independent ROC curves for different continuous parameters with respect to a single binary endpoint. This allows a user to evaluate how predictive is a continuous parameter of binary endpoint.'
 )
-describe_module(
-  'Scatter plot', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/scatterplot.html', 'scatterplot',
-  'The scatterplot module visualizes relationships between two biomarkers using scatterplots with multiple grouping levels and correlation measures.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration'
+
+build_module(
+  'Biomarker Analysis, Parameter Exploration',
+  'Scatter plot', 'dv.explorer.parameter',
+  'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/scatterplot.html',
+  'scatterplot',
+  'The scatterplot module visualizes relationships between two biomarkers using scatterplots with multiple grouping levels and correlation measures.'
 )
-describe_module(
-  'Scatter plot matrix', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/scatterplotmatrix.html', 'scatterplot_matrix',
-  'The scatter module allows examining the correlation of several parameters using a scatterplot matrix with different levels of grouping.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration'
+
+build_module(
+  'Biomarker Analysis, Parameter Exploration',
+  'Scatter plot matrix', 'dv.explorer.parameter',
+  'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/scatterplotmatrix.html',
+  'scatterplot_matrix',
+  'The scatter module allows examining the correlation of several parameters using a scatterplot matrix with different levels of grouping.'
 )
-describe_module(
-  'Spider plot', 'dv.spiderplot', 'https://boehringer-ingelheim.github.io/dv.spiderplot/', 'spiderplot',
-  'The Spiderplot module visualizes individual patient trajectories over time in clinical trials, particularly valuable for oncology efficacy analysis. Users can display patient-level response data as spider plots showing changes in tumor size or other clinical measurements across multiple visits, with scatter points at defined time units. Additional features include subgrouping entities by criteria on separate plots, supporting use cases like treatment efficacy comparisons and patient visit/lab indicator analyses. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.<br><strong>Use case</strong>: Oncology Efficacy Monitoring'
+
+build_module(
+  'Oncology Efficacy Monitoring',
+  'Spider plot', 'dv.spiderplot',
+  'https://boehringer-ingelheim.github.io/dv.spiderplot/',
+  'spiderplot',
+  'The Spiderplot module visualizes individual patient trajectories over time in clinical trials, particularly valuable for oncology efficacy analysis. Users can display patient-level response data as spider plots showing changes in tumor size or other clinical measurements across multiple visits, with scatter points at defined time units. Additional features include subgrouping entities by criteria on separate plots, supporting use cases like treatment efficacy comparisons and patient visit/lab indicator analyses. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.'
 )
-describe_module(
-  'Swimmerplot', 'dv.swimmerplot', 'https://boehringer-ingelheim.github.io/dv.swimmerplot/', 'swimmerplot',
-  'The Swimmerplot module enables users to create interactive swimmer plots for clinical trial data. Each patient is displayed as a horizontal swim lane showing their treatment timeline, with arrows indicating ongoing treatments and optional markers for clinical responses like tumor shrinkage or disease progression. Patients can be grouped and sorted by characteristics such as demographics or treatment type, with interactive features including hover tooltips and clickable navigation to detailed patient views.<br><strong>Use case</strong>: Oncology Efficacy Monitoring'
+
+build_module(
+  'Oncology Efficacy Monitoring',
+  'Swimmerplot', 'dv.swimmerplot',
+  'https://boehringer-ingelheim.github.io/dv.swimmerplot/',
+  'swimmerplot',
+  'The Swimmerplot module enables users to create interactive swimmer plots for clinical trial data. Each patient is displayed as a horizontal swim lane showing their treatment timeline, with arrows indicating ongoing treatments and optional markers for clinical responses like tumor shrinkage or disease progression. Patients can be grouped and sorted by characteristics such as demographics or treatment type, with interactive features including hover tooltips and clickable navigation to detailed patient views.'
 )
-describe_module(
-  'Tplyr table', 'dv.tables', 'https://boehringer-ingelheim.github.io/dv.tables/articles/Tplyr_tables.html', 'tplyr_table',
-  'The Tplyr table module enables interactive visualization of summary tables created with {Tplyr} within DaVinci apps. It acts as a wrapper that not only displays these tables but also provides traceability by linking each result cell back to its source listing using {dv.listings}. The module supports multiple Tplyr tables and standalone listings under one tab via a drop-down selector, making it easier for app creators to build flexible, auditable, and user-friendly clinical data review apps.<br><strong>Use case</strong>: Quality Monitoring'
+
+build_module(
+  'Quality Monitoring',
+  'Tplyr table', 'dv.tables',
+  'https://boehringer-ingelheim.github.io/dv.tables/articles/Tplyr_tables.html',
+  'tplyr_table',
+  'The Tplyr table module enables interactive visualization of summary tables created with {Tplyr} within DaVinci apps. It acts as a wrapper that not only displays these tables but also provides traceability by linking each result cell back to its source listing using {dv.listings}. The module supports multiple Tplyr tables and standalone listings under one tab via a drop-down selector, making it easier for app creators to build flexible, auditable, and user-friendly clinical data review apps.'
 )
-describe_module(
-  'Waterfall plus heatmap', 'dv.explorer.parameter', 'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/wfphm.html', 'waterfall_plus_heatmap',
-  'The Waterfall plus heatmap module package includes a waterfall plot and aligned categorical continuous and parameter heatmaps.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration'
+
+build_module(
+  'Biomarker Analysis, Parameter Exploration',
+  'Waterfall plus heatmap', 'dv.explorer.parameter',
+  'https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/wfphm.html',
+  'waterfall_plus_heatmap',
+  'The Waterfall plus heatmap module package includes a waterfall plot and aligned categorical continuous and parameter heatmaps.'
 )
+
+cat('</div>')
+
 ```
 
 ## Other useful packages
-```{r, results='asis'}
 
-describe_module(
-  "DaVinci's Teal wrapper package", 'dv.teal', 'https://boehringer-ingelheim.github.io/dv.teal/', 'teal',
-  'The dv.teal package provides a wrapper function to include Teal modules within the DaVinci framework.<br><strong>Use case</strong>: Any'
+```{r results='asis'}
+
+cat('<div class="modulegrid">')
+
+build_module(
+  'Any',
+  "DaVinci's Teal wrapper", 
+  'dv.teal',
+  'https://boehringer-ingelheim.github.io/dv.teal/',
+  'teal',
+  'The dv.teal package provides a wrapper function to include Teal modules within the DaVinci framework.'
 )
+
+cat('</div>')
+
+```
+
+
+```{=html}
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  // gets reference of filter (line 122) and saves it in new var
+  // parent element for buttons, buttons are added to this parent element in function "createButton"
+  var filterContainer = document.querySelector(".filter");
+
+
+  // returns array with references of all elements of type module
+  var modules = document.querySelectorAll(".module");
+  
+  // collect use cases without duplicates
+  var usecases = []; // empty array
+
+  for (var i = 0; i < modules.length; i++) {
+    // accessing attribute "data-usecase" with dataset.usecase
+    var text = modules[i].dataset.usecase;
+    var values = text.split(","); // creates array with seperated use cases
+
+    for (var j = 0; j < values.length; j++) {
+      var value = values[j].trim(); // trim removes whitespaces from both ends of the string
+
+      // value not already in array
+      if (usecases.indexOf(value) === -1) {
+        // push addds value to the array (+1)
+        usecases.push(value);
+      }
+    }
+  }
+
+  // string array sorted alphabetically in ascending order
+  usecases.sort();
+  
+  
+  // create "All" button + as many buttons as there are use cases (sorted in ascending order)
+  
+  createButton("All", "");
+  
+  for (var k = 0; k < usecases.length; k++) {
+    createButton(usecases[k], usecases[k]);
+  }
+  
+  
+  // ########## FUNCTION ########## 
+  // checks for each module if it matches the filtered use case
+  
+  function moduleMatchesFilter(module, filterValue) {
+  
+    if (filterValue === "") {
+      return true; // "All"-button shows every module (because filterValue is empty)
+    }
+
+    // access usecase of module
+    var usecaseText = module.dataset.usecase;
+    // split by comma into seperate terms
+    var usecases = usecaseText.split(",");
+    
+    // iterates through usecases-list of the module
+    for (var i = 0; i < usecases.length; i++) {
+      // remove whitespaces from both ends of the string
+      if (usecases[i].trim() === filterValue) {
+        return true; 
+      }
+    }
+  
+    // selected usecase not in usecases of the module --> no match
+    return false;
+  }
+
+
+  // ########## FUNCTION ########## 
+  // building the buttons and adding on-click functionality
+  
+  function createButton(label, filterValue) {
+  
+    // create new html element, type: button
+    var button = document.createElement("button");
+    // edit element as ".tag" in css file 
+    button.className = "tag";
+
+    // only "All"-button has empty filterValue --> is set as active by default
+    // .tag:active has different style compared to .tag
+    if (filterValue === "") {
+      button.classList.add("active");
+    }
+
+    button.textContent = label; // sets button text/label
+
+    button.addEventListener("click", function () {
+
+      // deactivate all buttons on click
+      var allButtons = document.querySelectorAll(".tag");
+      for (var i = 0; i < allButtons.length; i++) {
+        allButtons[i].classList.remove("active");
+      }
+
+      // set clicked button as active
+      button.classList.add("active");
+
+      // iterate through all modules. display module if its use case matches filter value
+      for (var i = 0; i < modules.length; i++) {
+        if (moduleMatchesFilter(modules[i], filterValue)) {
+          modules[i].style.display = "";
+        } else {
+          modules[i].style.display = "none";
+        }
+      }
+    });
+
+    filterContainer.appendChild(button); // add all the buttons as child elements to filter-element so they can be displayed
+  }
+});
+
+</script>
 ```
