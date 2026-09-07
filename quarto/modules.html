@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -38,10 +41,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-943dae335387ebfea3b8a2f856d26e13.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-fdc525bdf57edcca8363e9f26422d153.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -75,6 +78,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -141,35 +145,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#general-davinci-packages" id="toc-general-davinci-packages" class="nav-link active" data-scroll-target="#general-davinci-packages">General DaVinci packages</a>
-  <ul class="collapse">
-  <li><a href="#module-manager-by-dv.manager" id="toc-module-manager-by-dv.manager" class="nav-link" data-scroll-target="#module-manager-by-dv.manager">Module Manager by {dv.manager}</a></li>
-  <li><a href="#data-loader-by-dv.loader" id="toc-data-loader-by-dv.loader" class="nav-link" data-scroll-target="#data-loader-by-dv.loader">Data loader by {dv.loader}</a></li>
-  </ul></li>
-  <li><a href="#davinci-modules" id="toc-davinci-modules" class="nav-link" data-scroll-target="#davinci-modules">DaVinci modules</a>
-  <ul class="collapse">
-  <li><a href="#bookmark-manager-by-dv.bookman" id="toc-bookmark-manager-by-dv.bookman" class="nav-link" data-scroll-target="#bookmark-manager-by-dv.bookman">Bookmark manager by {dv.bookman}</a></li>
-  <li><a href="#boxplot-by-dv.explorer.parameter" id="toc-boxplot-by-dv.explorer.parameter" class="nav-link" data-scroll-target="#boxplot-by-dv.explorer.parameter">Boxplot by {dv.explorer.parameter}</a></li>
-  <li><a href="#clinical-timelines-by-dv.clinlines" id="toc-clinical-timelines-by-dv.clinlines" class="nav-link" data-scroll-target="#clinical-timelines-by-dv.clinlines">Clinical timelines by {dv.clinlines}</a></li>
-  <li><a href="#correlation-heatmap-by-dv.explorer.parameter" id="toc-correlation-heatmap-by-dv.explorer.parameter" class="nav-link" data-scroll-target="#correlation-heatmap-by-dv.explorer.parameter">Correlation heatmap by {dv.explorer.parameter}</a></li>
-  <li><a href="#edish-by-dv.edish" id="toc-edish-by-dv.edish" class="nav-link" data-scroll-target="#edish-by-dv.edish">eDISH by {dv.edish}</a></li>
-  <li><a href="#hierarchical-count-table-by-dv.tables" id="toc-hierarchical-count-table-by-dv.tables" class="nav-link" data-scroll-target="#hierarchical-count-table-by-dv.tables">Hierarchical count table by {dv.tables}</a></li>
-  <li><a href="#forest-plot-by-dv.explorer.parameter" id="toc-forest-plot-by-dv.explorer.parameter" class="nav-link" data-scroll-target="#forest-plot-by-dv.explorer.parameter">Forest plot by {dv.explorer.parameter}</a></li>
-  <li><a href="#line-plot-by-dv.explorer.parameter" id="toc-line-plot-by-dv.explorer.parameter" class="nav-link" data-scroll-target="#line-plot-by-dv.explorer.parameter">Line plot by {dv.explorer.parameter}</a></li>
-  <li><a href="#listings-by-dv.listings" id="toc-listings-by-dv.listings" class="nav-link" data-scroll-target="#listings-by-dv.listings">Listings by {dv.listings}</a></li>
-  <li><a href="#patient-profile-by-dv.papo" id="toc-patient-profile-by-dv.papo" class="nav-link" data-scroll-target="#patient-profile-by-dv.papo">Patient profile by {dv.papo}</a></li>
-  <li><a href="#roc-by-dv.explorer.parameter" id="toc-roc-by-dv.explorer.parameter" class="nav-link" data-scroll-target="#roc-by-dv.explorer.parameter">ROC by {dv.explorer.parameter}</a></li>
-  <li><a href="#scatter-plot-by-dv.explorer.parameter" id="toc-scatter-plot-by-dv.explorer.parameter" class="nav-link" data-scroll-target="#scatter-plot-by-dv.explorer.parameter">Scatter plot by {dv.explorer.parameter}</a></li>
-  <li><a href="#scatter-plot-matrix-by-dv.explorer.parameter" id="toc-scatter-plot-matrix-by-dv.explorer.parameter" class="nav-link" data-scroll-target="#scatter-plot-matrix-by-dv.explorer.parameter">Scatter plot matrix by {dv.explorer.parameter}</a></li>
-  <li><a href="#spider-plot-by-dv.spiderplot" id="toc-spider-plot-by-dv.spiderplot" class="nav-link" data-scroll-target="#spider-plot-by-dv.spiderplot">Spider plot by {dv.spiderplot}</a></li>
-  <li><a href="#swimmerplot-by-dv.swimmerplot" id="toc-swimmerplot-by-dv.swimmerplot" class="nav-link" data-scroll-target="#swimmerplot-by-dv.swimmerplot">Swimmerplot by {dv.swimmerplot}</a></li>
-  <li><a href="#tplyr-table-by-dv.tables" id="toc-tplyr-table-by-dv.tables" class="nav-link" data-scroll-target="#tplyr-table-by-dv.tables">Tplyr table by {dv.tables}</a></li>
-  <li><a href="#waterfall-plus-heatmap-by-dv.explorer.parameter" id="toc-waterfall-plus-heatmap-by-dv.explorer.parameter" class="nav-link" data-scroll-target="#waterfall-plus-heatmap-by-dv.explorer.parameter">Waterfall plus heatmap by {dv.explorer.parameter}</a></li>
-  </ul></li>
-  <li><a href="#other-useful-packages" id="toc-other-useful-packages" class="nav-link" data-scroll-target="#other-useful-packages">Other useful packages</a>
-  <ul class="collapse">
-  <li><a href="#davincis-teal-wrapper-package-by-dv.teal" id="toc-davincis-teal-wrapper-package-by-dv.teal" class="nav-link" data-scroll-target="#davincis-teal-wrapper-package-by-dv.teal">DaVinci’s Teal wrapper package by {dv.teal}</a></li>
-  </ul></li>
+  <li><a href="#general-davinci-packages" id="toc-general-davinci-packages" class="nav-link active" data-scroll-target="#general-davinci-packages">General DaVinci packages</a></li>
+  <li><a href="#davinci-modules" id="toc-davinci-modules" class="nav-link" data-scroll-target="#davinci-modules">DaVinci modules</a></li>
+  <li><a href="#other-useful-packages" id="toc-other-useful-packages" class="nav-link" data-scroll-target="#other-useful-packages">Other useful packages</a></li>
   </ul>
 </nav>
     </div>
@@ -197,21 +175,54 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="general-davinci-packages" class="level2">
 <h2 class="anchored" data-anchor-id="general-davinci-packages">General DaVinci packages</h2>
-<section id="module-manager-by-dv.manager" class="level3">
-<h3 class="anchored" data-anchor-id="module-manager-by-dv.manager">Module Manager by <a href="https://boehringer-ingelheim.github.io/dv.manager/" target="_blank">{dv.manager}</a></h3>
-<p>The Module Manager is the heart of each DaVinci app. It is designed to act as container for the DaVinci modules and provide the necessary infrastructure for their operation. Additionally, {dv.manager} equips the resulting DaVinci app with various functionalities, like displaying the meta information of the data, jumping between modules, switching between different trials, showing a custom start-up message, and managing global filtering across modules, so that users can define filters once and have them applied consistently to all visualizations in the app.</p>
-</section>
-<section id="data-loader-by-dv.loader" class="level3">
-<h3 class="anchored" data-anchor-id="data-loader-by-dv.loader">Data loader by <a href="https://boehringer-ingelheim.github.io/dv.loader/" target="_blank">{dv.loader}</a></h3>
-<p>Besides the Module Manager, DaVinci provides another handy utility package called {dv.loader}. It facilitates data loading from either a local or remote source, such as a network file storage folder. Once the requested data is loaded, it can be passed through customized preprocessing routines and transferred to the Module Manager for display in the DaVinci app.</p>
-</section>
+<div class="generalgrid">
+<div class="textmodule">
+<div class="header">
+<div class="heading">
+<p><strong>Module Manager</strong></p>
+</div>
+<div class="subheading">
+<p>by <a href="https://boehringer-ingelheim.github.io/dv.manager/" target="_blank">{dv.manager}</a></p>
+</div>
+</div>
+<div class="textcard">
+<p>The Module Manager is the heart of each DaVinci app. It acts as a container for the DaVinci modules and provides the necessary infrastructure for their operation. Additionally, {dv.manager} equips the resulting DaVinci app with various functionalities, like jumping between modules, switching between different trials and managing global filtering across modules.</p>
+</div>
+</div>
+<div class="textmodule">
+<div class="header">
+<div class="heading">
+<p><strong>Data loader</strong></p>
+</div>
+<div class="subheading">
+<p>by <a href="https://boehringer-ingelheim.github.io/dv.loader/" target="_blank">{dv.loader}</a></p>
+</div>
+</div>
+<div class="textcard">
+<p>DaVinci provides another handy utility package called {dv.loader}. It facilitates data loading from either a local or remote source, such as a network file storage folder. Once the requested data is loaded, it can be passed through customized preprocessing routines and transferred to the Module Manager for display in the DaVinci app.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="davinci-modules" class="level2">
 <h2 class="anchored" data-anchor-id="davinci-modules">DaVinci modules</h2>
-<section id="bookmark-manager-by-dv.bookman" class="level3">
-<h3 class="anchored" data-anchor-id="bookmark-manager-by-dv.bookman">Bookmark manager by <a href="https://boehringer-ingelheim.github.io/dv.bookman/" target="_blank">{dv.bookman}</a></h3>
-<div class="columns">
-<div class="column" style="width:40%;">
+
+<h4 class="anchored">Select use case:</h4>
+<div class="filter">
+</div>
+<div class="modulegrid">
+<div class="module" data-usecase="Any">
+<div class="header">
+<div class="heading">
+<p><strong>Bookmark manager</strong></p>
+</div>
+<div class="subheading">
+<p>by <a href="https://boehringer-ingelheim.github.io/dv.bookman/" target="_blank">{dv.bookman}</a></p>
+</div>
+</div>
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
 <div id="bookmark_manager-gallery" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
@@ -220,8 +231,8 @@ ul.task-list li input[type="checkbox"] {
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="5000">
       <a href="images/modules/bookmark_manager/1.png" class="lightbox" data-gallery="bookmark_manager-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/bookmark_manager/1.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/bookmark_manager/1.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -230,8 +241,8 @@ ul.task-list li input[type="checkbox"] {
     </div>
     <div class="carousel-item" data-bs-interval="5000">
       <a href="images/modules/bookmark_manager/3.png" class="lightbox" data-gallery="bookmark_manager-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/bookmark_manager/3.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/bookmark_manager/3.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -239,24 +250,29 @@ ul.task-list li input[type="checkbox"] {
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#bookmark_manager-gallery" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#bookmark_manager-gallery" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
-</div><div class="column" style="width:60%;">
-<p>This module lists all server-side bookmarks of a shiny application, allows to describe them and feature the most relevant ones.<br><strong>Use case</strong>: Any</p>
+<div class="usecase">
+<p><strong>Use case</strong>: Any</p>
 </div>
 </div>
-</section>
-<section id="boxplot-by-dv.explorer.parameter" class="level3">
-<h3 class="anchored" data-anchor-id="boxplot-by-dv.explorer.parameter">Boxplot by <a href="https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/boxplot.html" target="_blank">{dv.explorer.parameter}</a></h3>
-<div class="columns">
-<div class="column" style="width:40%;">
+<div class="card-back">
+<p>This module lists all server-side bookmarks of a shiny application, allows to describe them and feature the most relevant ones.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="module" data-usecase="Biomarker Analysis, Parameter Exploration">
+<div class="header">
+<div class="heading">
+<p><strong>Boxplot</strong></p>
+</div>
+<div class="subheading">
+<p>by <a href="https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/boxplot.html" target="_blank">{dv.explorer.parameter}</a></p>
+</div>
+</div>
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
 <div id="boxplot-gallery" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
@@ -268,8 +284,8 @@ ul.task-list li input[type="checkbox"] {
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="5000">
       <a href="images/modules/boxplot/1.png" class="lightbox" data-gallery="boxplot-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/boxplot/1.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/boxplot/1.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -278,8 +294,8 @@ ul.task-list li input[type="checkbox"] {
     </div>
     <div class="carousel-item" data-bs-interval="5000">
       <a href="images/modules/boxplot/1b.png" class="lightbox" data-gallery="boxplot-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/boxplot/1b.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/boxplot/1b.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -288,8 +304,8 @@ ul.task-list li input[type="checkbox"] {
     </div>
     <div class="carousel-item" data-bs-interval="5000">
       <a href="images/modules/boxplot/2.png" class="lightbox" data-gallery="boxplot-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/boxplot/2.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/boxplot/2.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -298,8 +314,8 @@ ul.task-list li input[type="checkbox"] {
     </div>
     <div class="carousel-item" data-bs-interval="5000">
       <a href="images/modules/boxplot/3.png" class="lightbox" data-gallery="boxplot-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/boxplot/3.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/boxplot/3.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -308,8 +324,8 @@ ul.task-list li input[type="checkbox"] {
     </div>
     <div class="carousel-item" data-bs-interval="5000">
       <a href="images/modules/boxplot/4.png" class="lightbox" data-gallery="boxplot-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/boxplot/4.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/boxplot/4.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -317,24 +333,29 @@ ul.task-list li input[type="checkbox"] {
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#boxplot-gallery" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#boxplot-gallery" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
-</div><div class="column" style="width:60%;">
-<p>The boxplot module allows visualizing parameter data from ADaM basic data structure as boxplots and violin plots. Data can be displayed with different levels of grouping, with listings of single-subject data. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo. It also includes statistical testing to compare the distribution of different groups.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
+<div class="usecase">
+<p><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
 </div>
 </div>
-</section>
-<section id="clinical-timelines-by-dv.clinlines" class="level3">
-<h3 class="anchored" data-anchor-id="clinical-timelines-by-dv.clinlines">Clinical timelines by <a href="https://boehringer-ingelheim.github.io/dv.clinlines/" target="_blank">{dv.clinlines}</a></h3>
-<div class="columns">
-<div class="column" style="width:40%;">
+<div class="card-back">
+<p>The boxplot module allows visualizing parameter data from ADaM basic data structure as boxplots and violin plots. Data can be displayed with different levels of grouping, with listings of single-subject data. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo. It also includes statistical testing to compare the distribution of different groups.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="module" data-usecase="Quality Monitoring, Safety Review">
+<div class="header">
+<div class="heading">
+<p><strong>Clinical timelines</strong></p>
+</div>
+<div class="subheading">
+<p>by <a href="https://boehringer-ingelheim.github.io/dv.clinlines/" target="_blank">{dv.clinlines}</a></p>
+</div>
+</div>
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
 <div id="clinical_timelines-gallery" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
@@ -344,8 +365,8 @@ ul.task-list li input[type="checkbox"] {
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="5000">
       <a href="images/modules/clinical_timelines/1.png" class="lightbox" data-gallery="clinical_timelines-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/clinical_timelines/1.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/clinical_timelines/1.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -354,8 +375,8 @@ ul.task-list li input[type="checkbox"] {
     </div>
     <div class="carousel-item" data-bs-interval="5000">
       <a href="images/modules/clinical_timelines/2.png" class="lightbox" data-gallery="clinical_timelines-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/clinical_timelines/2.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/clinical_timelines/2.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -364,8 +385,8 @@ ul.task-list li input[type="checkbox"] {
     </div>
     <div class="carousel-item" data-bs-interval="5000">
       <a href="images/modules/clinical_timelines/3.png" class="lightbox" data-gallery="clinical_timelines-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/clinical_timelines/3.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/clinical_timelines/3.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -373,39 +394,53 @@ ul.task-list li input[type="checkbox"] {
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#clinical_timelines-gallery" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#clinical_timelines-gallery" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
-</div><div class="column" style="width:60%;">
-<p>The Clinical Timelines module displays subject level data over time to present dates and/or time intervals of trial events, like adverse events, concomitant medications, randomization dates, and more. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.<br><strong>Use case</strong>: Quality Monitoring, Safety Review</p>
+<div class="usecase">
+<p><strong>Use case</strong>: Quality Monitoring, Safety Review</p>
 </div>
 </div>
-</section>
-<section id="correlation-heatmap-by-dv.explorer.parameter" class="level3">
-<h3 class="anchored" data-anchor-id="correlation-heatmap-by-dv.explorer.parameter">Correlation heatmap by <a href="https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/correlation_heatmap.html" target="_blank">{dv.explorer.parameter}</a></h3>
-<div class="columns">
-<div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="images/modules/correlation_heatmap/1.png" class="lightbox" data-gallery="correlation_heatmap-gallery"><img src="images/modules/correlation_heatmap/1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></a></p>
-</figure>
+<div class="card-back">
+<p>The Clinical Timelines module displays subject level data over time to present dates and/or time intervals of trial events, like adverse events, concomitant medications, randomization dates, and more. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.</p>
 </div>
+</div>
+</div>
+</div>
+<div class="module" data-usecase="Biomarker Analysis, Parameter Exploration">
+<div class="header">
+<div class="heading">
+<p><strong>Correlation heatmap</strong></p>
+</div>
+<div class="subheading">
+<p>by <a href="https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/correlation_heatmap.html" target="_blank">{dv.explorer.parameter}</a></p>
+</div>
+</div>
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
+<p><a href="images/modules/correlation_heatmap/1.png" class="lightbox" data-gallery="correlation_heatmap-gallery"><img src="images/modules/correlation_heatmap/1.png" class="card-single-img img-fluid"></a></p>
 
-</div><div class="column" style="width:60%;">
-<p>The correlation heatmap module allows examining the correlation of several parameters using a correlation heatmap with different statistical measures.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
+<div class="usecase">
+<p><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
 </div>
 </div>
-</section>
-<section id="edish-by-dv.edish" class="level3">
-<h3 class="anchored" data-anchor-id="edish-by-dv.edish">eDISH by <a href="https://boehringer-ingelheim.github.io/dv.edish/" target="_blank">{dv.edish}</a></h3>
-<div class="columns">
-<div class="column" style="width:40%;">
+<div class="card-back">
+<p>The correlation heatmap module allows examining the correlation of several parameters using a correlation heatmap with different statistical measures.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="module" data-usecase="Quality Monitoring, Safety Review">
+<div class="header">
+<div class="heading">
+<p><strong>eDISH</strong></p>
+</div>
+<div class="subheading">
+<p>by <a href="https://boehringer-ingelheim.github.io/dv.edish/" target="_blank">{dv.edish}</a></p>
+</div>
+</div>
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
 <div id="edish-gallery" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
@@ -414,8 +449,8 @@ ul.task-list li input[type="checkbox"] {
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="5000">
       <a href="images/modules/edish/1.png" class="lightbox" data-gallery="edish-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/edish/1.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/edish/1.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -424,8 +459,8 @@ ul.task-list li input[type="checkbox"] {
     </div>
     <div class="carousel-item" data-bs-interval="5000">
       <a href="images/modules/edish/2.png" class="lightbox" data-gallery="edish-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/edish/2.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/edish/2.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -433,69 +468,101 @@ ul.task-list li input[type="checkbox"] {
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#edish-gallery" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#edish-gallery" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
-</div><div class="column" style="width:60%;">
-<p>The eDISH module aims to support the assessment of drug-induced liver injury by means of the (modified) evaluation of Drug-Induced Serious Hepatotoxicity plot. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.<br><strong>Use case</strong>: Quality Monitoring, Safety Review</p>
+<div class="usecase">
+<p><strong>Use case</strong>: Quality Monitoring, Safety Review</p>
 </div>
 </div>
-</section>
-<section id="hierarchical-count-table-by-dv.tables" class="level3">
-<h3 class="anchored" data-anchor-id="hierarchical-count-table-by-dv.tables">Hierarchical count table by <a href="https://boehringer-ingelheim.github.io/dv.tables/articles/hierarchical_count_table.html" target="_blank">{dv.tables}</a></h3>
-<div class="columns">
-<div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="images/modules/hierarchical_count/1.png" class="lightbox" data-gallery="hierarchical_count-gallery"><img src="images/modules/hierarchical_count/1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></a></p>
-</figure>
+<div class="card-back">
+<p>The eDISH module aims to support the assessment of drug-induced liver injury by means of the (modified) evaluation of Drug-Induced Serious Hepatotoxicity plot. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.</p>
 </div>
+</div>
+</div>
+</div>
+<div class="module" data-usecase="Quality Monitoring, Safety Review">
+<div class="header">
+<div class="heading">
+<p><strong>Hierarchical count table</strong></p>
+</div>
+<div class="subheading">
+<p>by <a href="https://boehringer-ingelheim.github.io/dv.tables/articles/hierarchical_count_table.html" target="_blank">{dv.tables}</a></p>
+</div>
+</div>
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
+<p><a href="images/modules/hierarchical_count/1.png" class="lightbox" data-gallery="hierarchical_count-gallery"><img src="images/modules/hierarchical_count/1.png" class="card-single-img img-fluid"></a></p>
 
-</div><div class="column" style="width:60%;">
-<p>The hierarchical count table module enables the visualization of hierarchical tables, displaying event counts at each level for a clear and structured overview. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.<br><strong>Use case</strong>: Quality Monitoring, Safety Review</p>
+<div class="usecase">
+<p><strong>Use case</strong>: Quality Monitoring, Safety Review</p>
 </div>
 </div>
-</section>
-<section id="forest-plot-by-dv.explorer.parameter" class="level3">
-<h3 class="anchored" data-anchor-id="forest-plot-by-dv.explorer.parameter">Forest plot by <a href="https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/forest.html" target="_blank">{dv.explorer.parameter}</a></h3>
-<div class="columns">
-<div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="images/modules/forestplot/1.png" class="lightbox" data-gallery="forestplot-gallery"><img src="images/modules/forestplot/1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></a></p>
-</figure>
+<div class="card-back">
+<p>The hierarchical count table module enables the visualization of hierarchical tables, displaying event counts at each level for a clear and structured overview. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.</p>
 </div>
+</div>
+</div>
+</div>
+<div class="module" data-usecase="Biomarker Analysis, Parameter Exploration">
+<div class="header">
+<div class="heading">
+<p><strong>Forest plot</strong></p>
+</div>
+<div class="subheading">
+<p>by <a href="https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/forest.html" target="_blank">{dv.explorer.parameter}</a></p>
+</div>
+</div>
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
+<p><a href="images/modules/forestplot/1.png" class="lightbox" data-gallery="forestplot-gallery"><img src="images/modules/forestplot/1.png" class="card-single-img img-fluid"></a></p>
 
-</div><div class="column" style="width:60%;">
-<p>The forest plot module allows examining the correlation of several parameters with a continuous variable in the form of a forest plot. Several correlation measures and groupings are available.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
+<div class="usecase">
+<p><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
 </div>
 </div>
-</section>
-<section id="line-plot-by-dv.explorer.parameter" class="level3">
-<h3 class="anchored" data-anchor-id="line-plot-by-dv.explorer.parameter">Line plot by <a href="https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/lineplot_main_article.html" target="_blank">{dv.explorer.parameter}</a></h3>
-<div class="columns">
-<div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="images/modules/lineplot/1.png" class="lightbox" data-gallery="lineplot-gallery"><img src="images/modules/lineplot/1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></a></p>
-</figure>
+<div class="card-back">
+<p>The forest plot module allows examining the correlation of several parameters with a continuous variable in the form of a forest plot. Several correlation measures and groupings are available.</p>
 </div>
+</div>
+</div>
+</div>
+<div class="module" data-usecase="Safety Review, Biomarker Analysis, Parameter Exploration">
+<div class="header">
+<div class="heading">
+<p><strong>Line plot</strong></p>
+</div>
+<div class="subheading">
+<p>by <a href="https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/lineplot_main_article.html" target="_blank">{dv.explorer.parameter}</a></p>
+</div>
+</div>
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
+<p><a href="images/modules/lineplot/1.png" class="lightbox" data-gallery="lineplot-gallery"><img src="images/modules/lineplot/1.png" class="card-single-img img-fluid"></a></p>
 
-</div><div class="column" style="width:60%;">
-<p>The lineplot module allows examining the evolution of parameter values along different visits, using lineplots with different levels of grouping and aggregation measures. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.<br><strong>Use case</strong>: Safety Review, Biomarker Analysis, Parameter Exploration</p>
+<div class="usecase">
+<p><strong>Use case</strong>: Safety Review, Biomarker Analysis, Parameter Exploration</p>
 </div>
 </div>
-</section>
-<section id="listings-by-dv.listings" class="level3">
-<h3 class="anchored" data-anchor-id="listings-by-dv.listings">Listings by <a href="https://boehringer-ingelheim.github.io/dv.listings/" target="_blank">{dv.listings}</a></h3>
-<div class="columns">
-<div class="column" style="width:40%;">
+<div class="card-back">
+<p>The lineplot module allows examining the evolution of parameter values along different visits, using lineplots with different levels of grouping and aggregation measures. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="module" data-usecase="Quality Monitoring, Safety Review">
+<div class="header">
+<div class="heading">
+<p><strong>Listings</strong></p>
+</div>
+<div class="subheading">
+<p>by <a href="https://boehringer-ingelheim.github.io/dv.listings/" target="_blank">{dv.listings}</a></p>
+</div>
+</div>
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
 <div id="listings-gallery" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
@@ -505,8 +572,8 @@ ul.task-list li input[type="checkbox"] {
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="5000">
       <a href="images/modules/listings/1.png" class="lightbox" data-gallery="listings-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/listings/1.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/listings/1.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -515,8 +582,8 @@ ul.task-list li input[type="checkbox"] {
     </div>
     <div class="carousel-item" data-bs-interval="5000">
       <a href="images/modules/listings/2.png" class="lightbox" data-gallery="listings-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/listings/2.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/listings/2.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -525,8 +592,8 @@ ul.task-list li input[type="checkbox"] {
     </div>
     <div class="carousel-item" data-bs-interval="5000">
       <a href="images/modules/listings/3.png" class="lightbox" data-gallery="listings-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/listings/3.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/listings/3.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -534,24 +601,29 @@ ul.task-list li input[type="checkbox"] {
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#listings-gallery" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#listings-gallery" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
-</div><div class="column" style="width:60%;">
-<p>The listings module displays arbitrary datasets as listings. Users can select the dataset to be shown, and specify which columns of the dataset should be displayed as well as their order. The displayed columns can be sorted and filtered. Moreover, the table can be filtered to show only entries containing a keyword entered by the user. The module is not limited to usage of one data source, most notably, it can handle data from ADaM or SDTM. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.<br><strong>Use case</strong>: Quality Monitoring, Safety Review</p>
+<div class="usecase">
+<p><strong>Use case</strong>: Quality Monitoring, Safety Review</p>
 </div>
 </div>
-</section>
-<section id="patient-profile-by-dv.papo" class="level3">
-<h3 class="anchored" data-anchor-id="patient-profile-by-dv.papo">Patient profile by <a href="https://boehringer-ingelheim.github.io/dv.papo/" target="_blank">{dv.papo}</a></h3>
-<div class="columns">
-<div class="column" style="width:40%;">
+<div class="card-back">
+<p>The listings module displays arbitrary datasets as listings. Users can select the dataset to be shown, and specify which columns of the dataset should be displayed as well as their order. The displayed columns can be sorted and filtered. Moreover, the table can be filtered to show only entries containing a keyword entered by the user. The module is not limited to usage of one data source, most notably, it can handle data from ADaM or SDTM. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="module" data-usecase="Quality Monitoring, Safety Review">
+<div class="header">
+<div class="heading">
+<p><strong>Patient profile</strong></p>
+</div>
+<div class="subheading">
+<p>by <a href="https://boehringer-ingelheim.github.io/dv.papo/" target="_blank">{dv.papo}</a></p>
+</div>
+</div>
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
 <div id="patient_profile-gallery" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
@@ -560,8 +632,8 @@ ul.task-list li input[type="checkbox"] {
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="5000">
       <a href="images/modules/patient_profile/1.png" class="lightbox" data-gallery="patient_profile-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/patient_profile/1.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/patient_profile/1.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -570,8 +642,8 @@ ul.task-list li input[type="checkbox"] {
     </div>
     <div class="carousel-item" data-bs-interval="5000">
       <a href="images/modules/patient_profile/2.png" class="lightbox" data-gallery="patient_profile-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/patient_profile/2.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/patient_profile/2.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -579,51 +651,65 @@ ul.task-list li input[type="checkbox"] {
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#patient_profile-gallery" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#patient_profile-gallery" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
-</div><div class="column" style="width:60%;">
+<div class="usecase">
+<p><strong>Use case</strong>: Quality Monitoring, Safety Review</p>
+</div>
+</div>
+<div class="card-back">
 The Patient Profile module displays subject-level information structured into three sections:
-<ul style="margin:2px 0; padding-left:18px;">
+<ul>
 <li>
-<strong>Patient Information</strong>: Overview of general subject details (gender, age) customizable by App Creator
+Patient Information: Overview of general subject details (gender, age) customizable by App Creator
 </li>
 <li>
-<strong>Data Listings</strong>: Tabular subject data (adverse events, concomitant medications, vital signs)
+Data Listings: Tabular subject data (adverse events, concomitant medications, vital signs)
 </li>
 <li>
-<strong>Graphical Display</strong>: Plots of adverse events, lab values, and vital signs over time
+Graphical Display: Plots of adverse events, lab values, and vital signs over time
 </li>
 </ul>
-<p>It can be reached via drill-through navigation from several other modules, enabling direct access to the corresponding patient profile.<br><strong>Use case</strong>: Quality Monitoring, Safety Review</p>
+<p>It can be reached via drill-through navigation from several other modules, enabling direct access to the corresponding patient profile.</p>
 </div>
 </div>
-</section>
-<section id="roc-by-dv.explorer.parameter" class="level3">
-<h3 class="anchored" data-anchor-id="roc-by-dv.explorer.parameter">ROC by <a href="https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/roc.html" target="_blank">{dv.explorer.parameter}</a></h3>
-<div class="columns">
-<div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="images/modules/roc/1.png" class="lightbox" data-gallery="roc-gallery"><img src="images/modules/roc/1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></a></p>
-</figure>
 </div>
+</div>
+<div class="module" data-usecase="Biomarker Analysis, Parameter Exploration">
+<div class="header">
+<div class="heading">
+<p><strong>ROC</strong></p>
+</div>
+<div class="subheading">
+<p>by <a href="https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/roc.html" target="_blank">{dv.explorer.parameter}</a></p>
+</div>
+</div>
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
+<p><a href="images/modules/roc/1.png" class="lightbox" data-gallery="roc-gallery"><img src="images/modules/roc/1.png" class="card-single-img img-fluid"></a></p>
 
-</div><div class="column" style="width:60%;">
-<p>The ROC module makes it possible to visualize a set of ROC related charts, or tables, and compare independent ROC curves for different continuous parameters with respect to a single binary endpoint. This allows a user to evaluate how predictive is a continuous parameter of binary endpoint.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
+<div class="usecase">
+<p><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
 </div>
 </div>
-</section>
-<section id="scatter-plot-by-dv.explorer.parameter" class="level3">
-<h3 class="anchored" data-anchor-id="scatter-plot-by-dv.explorer.parameter">Scatter plot by <a href="https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/scatterplot.html" target="_blank">{dv.explorer.parameter}</a></h3>
-<div class="columns">
-<div class="column" style="width:40%;">
+<div class="card-back">
+<p>The ROC module makes it possible to visualize a set of ROC related charts, or tables, and compare independent ROC curves for different continuous parameters with respect to a single binary endpoint. This allows a user to evaluate how predictive is a continuous parameter of binary endpoint.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="module" data-usecase="Biomarker Analysis, Parameter Exploration">
+<div class="header">
+<div class="heading">
+<p><strong>Scatter plot</strong></p>
+</div>
+<div class="subheading">
+<p>by <a href="https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/scatterplot.html" target="_blank">{dv.explorer.parameter}</a></p>
+</div>
+</div>
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
 <div id="scatterplot-gallery" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
@@ -632,8 +718,8 @@ The Patient Profile module displays subject-level information structured into th
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="5000">
       <a href="images/modules/scatterplot/1.png" class="lightbox" data-gallery="scatterplot-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/scatterplot/1.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/scatterplot/1.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -642,8 +728,8 @@ The Patient Profile module displays subject-level information structured into th
     </div>
     <div class="carousel-item" data-bs-interval="5000">
       <a href="images/modules/scatterplot/2.png" class="lightbox" data-gallery="scatterplot-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/scatterplot/2.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/scatterplot/2.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -651,69 +737,101 @@ The Patient Profile module displays subject-level information structured into th
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#scatterplot-gallery" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#scatterplot-gallery" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
-</div><div class="column" style="width:60%;">
-<p>The scatterplot module visualizes relationships between two biomarkers using scatterplots with multiple grouping levels and correlation measures.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
+<div class="usecase">
+<p><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
 </div>
 </div>
-</section>
-<section id="scatter-plot-matrix-by-dv.explorer.parameter" class="level3">
-<h3 class="anchored" data-anchor-id="scatter-plot-matrix-by-dv.explorer.parameter">Scatter plot matrix by <a href="https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/scatterplotmatrix.html" target="_blank">{dv.explorer.parameter}</a></h3>
-<div class="columns">
-<div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="images/modules/scatterplot_matrix/1.png" class="lightbox" data-gallery="scatterplot_matrix-gallery"><img src="images/modules/scatterplot_matrix/1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></a></p>
-</figure>
+<div class="card-back">
+<p>The scatterplot module visualizes relationships between two biomarkers using scatterplots with multiple grouping levels and correlation measures.</p>
 </div>
+</div>
+</div>
+</div>
+<div class="module" data-usecase="Biomarker Analysis, Parameter Exploration">
+<div class="header">
+<div class="heading">
+<p><strong>Scatter plot matrix</strong></p>
+</div>
+<div class="subheading">
+<p>by <a href="https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/scatterplotmatrix.html" target="_blank">{dv.explorer.parameter}</a></p>
+</div>
+</div>
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
+<p><a href="images/modules/scatterplot_matrix/1.png" class="lightbox" data-gallery="scatterplot_matrix-gallery"><img src="images/modules/scatterplot_matrix/1.png" class="card-single-img img-fluid"></a></p>
 
-</div><div class="column" style="width:60%;">
-<p>The scatter module allows examining the correlation of several parameters using a scatterplot matrix with different levels of grouping.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
+<div class="usecase">
+<p><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
 </div>
 </div>
-</section>
-<section id="spider-plot-by-dv.spiderplot" class="level3">
-<h3 class="anchored" data-anchor-id="spider-plot-by-dv.spiderplot">Spider plot by <a href="https://boehringer-ingelheim.github.io/dv.spiderplot/" target="_blank">{dv.spiderplot}</a></h3>
-<div class="columns">
-<div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="images/modules/spiderplot/1.png" class="lightbox" data-gallery="spiderplot-gallery"><img src="images/modules/spiderplot/1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></a></p>
-</figure>
+<div class="card-back">
+<p>The scatter module allows examining the correlation of several parameters using a scatterplot matrix with different levels of grouping.</p>
 </div>
+</div>
+</div>
+</div>
+<div class="module" data-usecase="Oncology Efficacy Monitoring">
+<div class="header">
+<div class="heading">
+<p><strong>Spider plot</strong></p>
+</div>
+<div class="subheading">
+<p>by <a href="https://boehringer-ingelheim.github.io/dv.spiderplot/" target="_blank">{dv.spiderplot}</a></p>
+</div>
+</div>
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
+<p><a href="images/modules/spiderplot/1.png" class="lightbox" data-gallery="spiderplot-gallery"><img src="images/modules/spiderplot/1.png" class="card-single-img img-fluid"></a></p>
 
-</div><div class="column" style="width:60%;">
-<p>The Spiderplot module visualizes individual patient trajectories over time in clinical trials, particularly valuable for oncology efficacy analysis. Users can display patient-level response data as spider plots showing changes in tumor size or other clinical measurements across multiple visits, with scatter points at defined time units. Additional features include subgrouping entities by criteria on separate plots, supporting use cases like treatment efficacy comparisons and patient visit/lab indicator analyses. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.<br><strong>Use case</strong>: Oncology Efficacy Monitoring</p>
+<div class="usecase">
+<p><strong>Use case</strong>: Oncology Efficacy Monitoring</p>
 </div>
 </div>
-</section>
-<section id="swimmerplot-by-dv.swimmerplot" class="level3">
-<h3 class="anchored" data-anchor-id="swimmerplot-by-dv.swimmerplot">Swimmerplot by <a href="https://boehringer-ingelheim.github.io/dv.swimmerplot/" target="_blank">{dv.swimmerplot}</a></h3>
-<div class="columns">
-<div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="images/modules/swimmerplot/1.png" class="lightbox" data-gallery="swimmerplot-gallery"><img src="images/modules/swimmerplot/1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></a></p>
-</figure>
+<div class="card-back">
+<p>The Spiderplot module visualizes individual patient trajectories over time in clinical trials, particularly valuable for oncology efficacy analysis. Users can display patient-level response data as spider plots showing changes in tumor size or other clinical measurements across multiple visits, with scatter points at defined time units. Additional features include subgrouping entities by criteria on separate plots, supporting use cases like treatment efficacy comparisons and patient visit/lab indicator analyses. It supports drill-through to Patient Profile, allowing users to click a data point and open the corresponding subject in dv.papo.</p>
 </div>
+</div>
+</div>
+</div>
+<div class="module" data-usecase="Oncology Efficacy Monitoring">
+<div class="header">
+<div class="heading">
+<p><strong>Swimmerplot</strong></p>
+</div>
+<div class="subheading">
+<p>by <a href="https://boehringer-ingelheim.github.io/dv.swimmerplot/" target="_blank">{dv.swimmerplot}</a></p>
+</div>
+</div>
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
+<p><a href="images/modules/swimmerplot/1.png" class="lightbox" data-gallery="swimmerplot-gallery"><img src="images/modules/swimmerplot/1.png" class="card-single-img img-fluid"></a></p>
 
-</div><div class="column" style="width:60%;">
-<p>The Swimmerplot module enables users to create interactive swimmer plots for clinical trial data. Each patient is displayed as a horizontal swim lane showing their treatment timeline, with arrows indicating ongoing treatments and optional markers for clinical responses like tumor shrinkage or disease progression. Patients can be grouped and sorted by characteristics such as demographics or treatment type, with interactive features including hover tooltips and clickable navigation to detailed patient views.<br><strong>Use case</strong>: Oncology Efficacy Monitoring</p>
+<div class="usecase">
+<p><strong>Use case</strong>: Oncology Efficacy Monitoring</p>
 </div>
 </div>
-</section>
-<section id="tplyr-table-by-dv.tables" class="level3">
-<h3 class="anchored" data-anchor-id="tplyr-table-by-dv.tables">Tplyr table by <a href="https://boehringer-ingelheim.github.io/dv.tables/articles/Tplyr_tables.html" target="_blank">{dv.tables}</a></h3>
-<div class="columns">
-<div class="column" style="width:40%;">
+<div class="card-back">
+<p>The Swimmerplot module enables users to create interactive swimmer plots for clinical trial data. Each patient is displayed as a horizontal swim lane showing their treatment timeline, with arrows indicating ongoing treatments and optional markers for clinical responses like tumor shrinkage or disease progression. Patients can be grouped and sorted by characteristics such as demographics or treatment type, with interactive features including hover tooltips and clickable navigation to detailed patient views.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="module" data-usecase="Quality Monitoring">
+<div class="header">
+<div class="heading">
+<p><strong>Tplyr table</strong></p>
+</div>
+<div class="subheading">
+<p>by <a href="https://boehringer-ingelheim.github.io/dv.tables/articles/Tplyr_tables.html" target="_blank">{dv.tables}</a></p>
+</div>
+</div>
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
 <div id="tplyr_table-gallery" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
@@ -722,8 +840,8 @@ The Patient Profile module displays subject-level information structured into th
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="5000">
       <a href="images/modules/tplyr_table/1.png" class="lightbox" data-gallery="tplyr_table-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/tplyr_table/1.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/tplyr_table/1.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -732,8 +850,8 @@ The Patient Profile module displays subject-level information structured into th
     </div>
     <div class="carousel-item" data-bs-interval="5000">
       <a href="images/modules/tplyr_table/2.png" class="lightbox" data-gallery="tplyr_table-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/tplyr_table/2.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/tplyr_table/2.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -741,42 +859,58 @@ The Patient Profile module displays subject-level information structured into th
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#tplyr_table-gallery" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#tplyr_table-gallery" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
-</div><div class="column" style="width:60%;">
-<p>The Tplyr table module enables interactive visualization of summary tables created with {Tplyr} within DaVinci apps. It acts as a wrapper that not only displays these tables but also provides traceability by linking each result cell back to its source listing using {dv.listings}. The module supports multiple Tplyr tables and standalone listings under one tab via a drop-down selector, making it easier for app creators to build flexible, auditable, and user-friendly clinical data review apps.<br><strong>Use case</strong>: Quality Monitoring</p>
+<div class="usecase">
+<p><strong>Use case</strong>: Quality Monitoring</p>
 </div>
 </div>
-</section>
-<section id="waterfall-plus-heatmap-by-dv.explorer.parameter" class="level3">
-<h3 class="anchored" data-anchor-id="waterfall-plus-heatmap-by-dv.explorer.parameter">Waterfall plus heatmap by <a href="https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/wfphm.html" target="_blank">{dv.explorer.parameter}</a></h3>
-<div class="columns">
-<div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="images/modules/waterfall_plus_heatmap/1.png" class="lightbox" data-gallery="waterfall_plus_heatmap-gallery"><img src="images/modules/waterfall_plus_heatmap/1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></a></p>
-</figure>
+<div class="card-back">
+<p>The Tplyr table module enables interactive visualization of summary tables created with {Tplyr} within DaVinci apps. It acts as a wrapper that not only displays these tables but also provides traceability by linking each result cell back to its source listing using {dv.listings}. The module supports multiple Tplyr tables and standalone listings under one tab via a drop-down selector, making it easier for app creators to build flexible, auditable, and user-friendly clinical data review apps.</p>
 </div>
+</div>
+</div>
+</div>
+<div class="module" data-usecase="Biomarker Analysis, Parameter Exploration">
+<div class="header">
+<div class="heading">
+<p><strong>Waterfall plus heatmap</strong></p>
+</div>
+<div class="subheading">
+<p>by <a href="https://boehringer-ingelheim.github.io/dv.explorer.parameter/articles/wfphm.html" target="_blank">{dv.explorer.parameter}</a></p>
+</div>
+</div>
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
+<p><a href="images/modules/waterfall_plus_heatmap/1.png" class="lightbox" data-gallery="waterfall_plus_heatmap-gallery"><img src="images/modules/waterfall_plus_heatmap/1.png" class="card-single-img img-fluid"></a></p>
 
-</div><div class="column" style="width:60%;">
-<p>The Waterfall plus heatmap module package includes a waterfall plot and aligned categorical continuous and parameter heatmaps.<br><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
+<div class="usecase">
+<p><strong>Use case</strong>: Biomarker Analysis, Parameter Exploration</p>
 </div>
 </div>
-</section>
+<div class="card-back">
+<p>The Waterfall plus heatmap module package includes a waterfall plot and aligned categorical continuous and parameter heatmaps.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="other-useful-packages" class="level2">
 <h2 class="anchored" data-anchor-id="other-useful-packages">Other useful packages</h2>
-<section id="davincis-teal-wrapper-package-by-dv.teal" class="level3">
-<h3 class="anchored" data-anchor-id="davincis-teal-wrapper-package-by-dv.teal">DaVinci’s Teal wrapper package by <a href="https://boehringer-ingelheim.github.io/dv.teal/" target="_blank">{dv.teal}</a></h3>
-<div class="columns">
-<div class="column" style="width:40%;">
+<div class="modulegrid">
+<div class="module" data-usecase="Any">
+<div class="header">
+<div class="heading">
+<p><strong>DaVinci’s Teal wrapper</strong></p>
+</div>
+<div class="subheading">
+<p>by <a href="https://boehringer-ingelheim.github.io/dv.teal/" target="_blank">{dv.teal}</a></p>
+</div>
+</div>
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
 <div id="teal-gallery" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#gallery-carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
@@ -785,8 +919,8 @@ The Patient Profile module displays subject-level information structured into th
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="5000">
       <a href="images/modules/teal/1.png" class="lightbox" data-gallery="teal-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/teal/1.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/teal/1.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -795,8 +929,8 @@ The Patient Profile module displays subject-level information structured into th
     </div>
     <div class="carousel-item" data-bs-interval="5000">
       <a href="images/modules/teal/2.png" class="lightbox" data-gallery="teal-gallery">
-        <div style="height: 200px">
-          <img src="images/modules/teal/2.png" class="d-block  mx-auto border" style="width: 80%">
+        <div>
+          <img src="images/modules/teal/2.png" class="d-block  mx-auto">
         </div>
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -804,22 +938,135 @@ The Patient Profile module displays subject-level information structured into th
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#teal-gallery" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#teal-gallery" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
-</div><div class="column" style="width:60%;">
-<p>The dv.teal package provides a wrapper function to include Teal modules within the DaVinci framework.<br><strong>Use case</strong>: Any</p>
+<div class="usecase">
+<p><strong>Use case</strong>: Any</p>
 </div>
 </div>
+<div class="card-back">
+<p>The dv.teal package provides a wrapper function to include Teal modules within the DaVinci framework.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  // gets reference of filter (line 122) and saves it in new var
+  // parent element for buttons, buttons are added to this parent element in function "createButton"
+  var filterContainer = document.querySelector(".filter");
 
 
-</section>
+  // returns array with references of all elements of type module
+  var modules = document.querySelectorAll(".module");
+  
+  // collect use cases without duplicates
+  var usecases = []; // empty array
+
+  for (var i = 0; i < modules.length; i++) {
+    // accessing attribute "data-usecase" with dataset.usecase
+    var text = modules[i].dataset.usecase;
+    var values = text.split(","); // creates array with seperated use cases
+
+    for (var j = 0; j < values.length; j++) {
+      var value = values[j].trim(); // trim removes whitespaces from both ends of the string
+
+      // value not already in array
+      if (usecases.indexOf(value) === -1) {
+        // push addds value to the array (+1)
+        usecases.push(value);
+      }
+    }
+  }
+
+  // string array sorted alphabetically in ascending order
+  usecases.sort();
+  
+  
+  // create "All" button + as many buttons as there are use cases (sorted in ascending order)
+  
+  createButton("All", "");
+  
+  for (var k = 0; k < usecases.length; k++) {
+    createButton(usecases[k], usecases[k]);
+  }
+  
+  
+  // ########## FUNCTION ########## 
+  // checks for each module if it matches the filtered use case
+  
+  function moduleMatchesFilter(module, filterValue) {
+  
+    if (filterValue === "") {
+      return true; // "All"-button shows every module (because filterValue is empty)
+    }
+
+    // access usecase of module
+    var usecaseText = module.dataset.usecase;
+    // split by comma into seperate terms
+    var usecases = usecaseText.split(",");
+    
+    // iterates through usecases-list of the module
+    for (var i = 0; i < usecases.length; i++) {
+      // remove whitespaces from both ends of the string
+      if (usecases[i].trim() === filterValue) {
+        return true; 
+      }
+    }
+  
+    // selected usecase not in usecases of the module --> no match
+    return false;
+  }
+
+
+  // ########## FUNCTION ########## 
+  // building the buttons and adding on-click functionality
+  
+  function createButton(label, filterValue) {
+  
+    // create new html element, type: button
+    var button = document.createElement("button");
+    // edit element as ".tag" in css file 
+    button.className = "tag";
+
+    // only "All"-button has empty filterValue --> is set as active by default
+    // .tag:active has different style compared to .tag
+    if (filterValue === "") {
+      button.classList.add("active");
+    }
+
+    button.textContent = label; // sets button text/label
+
+    button.addEventListener("click", function () {
+
+      // deactivate all buttons on click
+      var allButtons = document.querySelectorAll(".tag");
+      for (var i = 0; i < allButtons.length; i++) {
+        allButtons[i].classList.remove("active");
+      }
+
+      // set clicked button as active
+      button.classList.add("active");
+
+      // iterate through all modules. display module if its use case matches filter value
+      for (var i = 0; i < modules.length; i++) {
+        if (moduleMatchesFilter(modules[i], filterValue)) {
+          modules[i].style.display = "";
+        } else {
+          modules[i].style.display = "none";
+        }
+      }
+    });
+
+    filterContainer.appendChild(button); // add all the buttons as child elements to filter-element so they can be displayed
+  }
+});
+
+</script>
+
+
 </section>
 
 </main> <!-- /main -->
